@@ -1,0 +1,16 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:ShortBody.Resources.xamlResources">
+
+    <SolidColorBrush x:Key="Smoke" Color="WhiteSmoke"/>
+    <SolidColorBrush x:Key="LightOrange" Color="#F39C12"/>
+    <SolidColorBrush x:Key="DeepOrange" Color="#E08E0B"/>
+    <SolidColorBrush x:Key="LightBlue" Color="#3C8DBC"/>
+    <SolidColorBrush x:Key="DeepBlue" Color="#367FA9"/>
+    <SolidColorBrush x:Key="ShinyWhite" Color="#ECF0F5"/>
+    <SolidColorBrush x:Key="myLightDark" Color="#484848"/>
+    <SolidColorBrush x:Key="myDirtyWhite" Color="#eee"/>
+    <SolidColorBrush x:Key="myMoreDirtyWhite" Color="#cacaca"/>
+    <SolidColorBrush x:Key="white" Color="#fff"/>
+    <SolidColorBrush x:Key="LeaderHeadBack" Color="#77A177"/>
+</ResourceDictionary>

@@ -1,0 +1,209 @@
+﻿<UserControl x:Class="ShortBody.DashBoard"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:fa="clr-namespace:FontAwesome.WPF;assembly=FontAwesome.WPF"
+             xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+             xmlns:local="clr-namespace:ShortBody"
+             xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+            Loaded="UserControl_Loaded"
+    mc:Ignorable="d" 
+           Foreground="white">
+
+
+    <Grid Background="{StaticResource myLightDark}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Background="{StaticResource DeepBlue}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Ellipse Width="40" Height="40" Margin="5">
+                <Ellipse.Fill>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Logo,IsAsync=True,Converter={cv:ByteToImageConverter},UpdateSourceTrigger=PropertyChanged}"
+                                   />
+                </Ellipse.Fill>
+            </Ellipse>
+
+            
+            <TextBlock Text="{Binding ChurchName}" Grid.Column="1"
+                       FontSize="20" Margin="10,0,10,0"
+                       TextAlignment="Left" VerticalAlignment="Center"/>
+
+            <TextBlock Name="TopHeader" HorizontalAlignment="Center" FontFamily="Algerian"
+                       VerticalAlignment="Center" FontSize="15"  Grid.Column="2" Text="People"></TextBlock>
+
+            <Ellipse  Grid.Column="4" DataContext="{Binding CurrentUser}"
+                    VerticalAlignment="Center" Margin="5" Height="40" Width="40" >
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="{Binding UserImage,IsAsync=True,UpdateSourceTrigger=PropertyChanged,Converter={cv:ByteToImageConverter}}"
+                       Stretch="UniformToFill"/>
+
+                </Ellipse.Fill>
+            </Ellipse>
+
+            <StackPanel  Margin="5" Grid.Column="3" Orientation="Horizontal">
+                <TextBlock Text="Welcome" VerticalAlignment="Center" Margin="10,0,3,0"/>
+                <TextBlock  DataContext="{Binding CurrentUser}" Text="{Binding FirstName}"
+                        VerticalAlignment="Center" Margin="3,0,5,0"
+                       TextAlignment="Center"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="5"  Orientation="Horizontal" >
+                <ctr:NotificationIcon HorizontalAlignment="Center" Count="Paid" Cursor="Hand"
+                                      VerticalAlignment="Center" x:Name="v"
+                                      Height="40" Width="40" Foreground="White">
+                    <fa:ImageAwesome Icon="BirthdayCake" Foreground="White"/>
+                </ctr:NotificationIcon>
+                <ctr:NotificationIcon HorizontalAlignment="Center" Cursor="Hand" ToolTip="BirthDays"
+                                      VerticalAlignment="Center"
+                                     Click="btnBirthDayNotification_Click"
+                                      x:Name="btnBirthDayNotification" 
+                                      Height="30" Width="30" Foreground="White">
+                    <fa:ImageAwesome Icon="BirthdayCake"  Foreground="White"/>
+                    
+                </ctr:NotificationIcon>
+                <Button Name="btnSettings" HorizontalAlignment="Center" Cursor="Hand" ToolTip="Settings"
+                                      VerticalAlignment="Center" Click="btnSettings_Click"
+                                      Height="30" Width="30" Foreground="White" Margin="5">
+                    <fa:ImageAwesome Icon="Gear"  Foreground="White"/>
+
+                </Button>
+
+                <Button Content="Logout" Margin="10" Cursor="Hand"
+                    Command="{Binding LogoutCommand}" Foreground="White"/>
+
+            </StackPanel>
+       </Grid>
+
+        <Button Name="btnToggleSideNav" Height="50" Width="50" 
+                    HorizontalAlignment="Left" BorderThickness="0" Margin="1,5"
+                    Grid.Row="1" VerticalAlignment="Top" Click="btnSideNavToggler_Click" >
+            <fa:ImageAwesome Icon="Navicon" Width="30" Foreground="White"/>
+
+        </Button>
+
+
+        <ItemsControl Grid.Row="1" Background="Transparent" x:Name="SideNav"
+                 Margin="5,50,0,0" Width="45"
+                 Foreground="White" BorderBrush="Transparent" HorizontalAlignment="Left">
+
+             <StackPanel Focusable="False" Name="spSideNav">
+
+               <ctr:LinedButton Command="{Binding OpenClients}" Margin="1,5" Height="50"
+                      ShowLine="True" Click="LinedButton_Click" x:Name="btnShowPeople">
+                    <StackPanel Orientation="Horizontal" >
+
+                        <fa:ImageAwesome Icon="User" 
+                                         Foreground="White"
+                                         Width="30"/>
+                        <TextBlock Text="People"  FontWeight="Bold" Width="100" 
+                               FontSize="18" Padding="5" Foreground="White"
+                               VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+
+
+                <ctr:LinedButton Command="{Binding OpenServices}" Margin="1,5"
+                                Click="LinedButton_Click" Height="50">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Group" 
+                                         Width="30"  Foreground="White"/>
+
+                        <TextBlock Text="Associations" FontWeight="Bold" Width="100" 
+                               FontSize="18" Padding="5" Foreground="White"
+                               VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+
+                <ctr:LinedButton Command="{Binding OpenAttendance}" Margin="1,5"
+                                 Click="LinedButton_Click" Height="50"
+                                 >
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Car" 
+                                         Width="30"  Foreground="White"/>
+                        <TextBlock Text="Attendance"  FontWeight="Bold" Width="115" 
+                               FontSize="18" Padding="5" Foreground="White"
+                               VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+                <ctr:LinedButton Command="{Binding OpenFamilies}" Margin="1,5"
+                                 Click="LinedButton_Click" Height="50"
+                                 x:Name="btnFamilies">
+                    <StackPanel Orientation="Horizontal">
+                        <fa:ImageAwesome Icon="Circle" 
+                                         Width="30"  Foreground="White"/>
+                        <TextBlock Text="Families"  FontWeight="Bold" Width="115" 
+                               FontSize="18" Padding="5" Foreground="White"
+                               VerticalAlignment="Center"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+                <ctr:LinedButton Command="{Binding OpenReports}" Margin="1,5"
+                                 Click="LinedButton_Click" Height="50">
+                    <StackPanel Orientation="Horizontal">
+
+                        <fa:ImageAwesome Icon="NewspaperOutline" Width="30"
+                                          Foreground="White"/>
+                        <TextBlock Text="Reports" VerticalAlignment="Center"
+                                       FontWeight="Bold" Width="110" Foreground="White"
+                               FontSize="18" Padding="5"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+                <ctr:LinedButton Command="{Binding OpenChurches}" x:Name="btnChurches"
+                                 Margin="1,5" Click="LinedButton_Click" Height="50">
+                    <StackPanel Orientation="Horizontal">
+
+                        <fa:ImageAwesome Icon="Industry" Width="30"
+                                          Foreground="White"/>
+                        <TextBlock Text="Churches" VerticalAlignment="Center"
+                                       FontWeight="Bold" Width="110" Foreground="White"
+                               FontSize="18" Padding="5"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+                <ctr:LinedButton Command="{Binding OpenUsers}" Margin="1,5"
+                         Click="LinedButton_Click" x:Name="btnUsers" Height="50">
+                    <StackPanel Orientation="Horizontal">
+
+                        <fa:ImageAwesome Icon="Bandcamp" Width="30"
+                                          Foreground="White"/>
+                        <TextBlock Text="Users" VerticalAlignment="Center"
+                                       FontWeight="Bold" Width="110" Foreground="White"
+                               FontSize="18" Padding="5"/>
+                    </StackPanel>
+                </ctr:LinedButton>
+
+    
+            </StackPanel>
+
+        </ItemsControl>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto"  Grid.Row="1" Grid.Column="1">
+            <Frame Height="675"  VerticalAlignment="Top"  Background="{StaticResource ShinyWhite}" NavigationUIVisibility="Hidden"
+               Content="{Binding DashBoardPage,UpdateSourceTrigger=PropertyChanged,Converter={cv:DashBoardPageConverter}}">
+
+            </Frame>
+
+        </ScrollViewer>
+    </Grid>
+
+</UserControl>

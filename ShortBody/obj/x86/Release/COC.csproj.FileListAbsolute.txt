@@ -1,0 +1,14 @@
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\MiniPages\People\DetailsMini.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Pages\LoginPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Pages\ReportPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Reports\ZoneReport.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Resources\UserControls\LinedButton.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Resources\UserControls\NotificationIcon.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Windows\MasterPasswordWindow.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\Windows\SettingsWindow.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\App.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\ShortBody_Content.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\GeneratedInternalTypeHelper.g.cs
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\ShortBody_MarkupCompile.cache
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\ShortBody_MarkupCompile.lref
+D:\ShortBody - Copy\ShortBody\obj\x86\Release\COC.csprojAssemblyReference.cache

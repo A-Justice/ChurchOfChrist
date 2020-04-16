@@ -1,0 +1,307 @@
+﻿<Page x:Class="ShortBody.Pages.ReportPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+                xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+
+      mc:Ignorable="d" 
+      Title="ReportPage">
+
+    <ScrollViewer HorizontalScrollBarVisibility="Auto">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+
+            <Border Background="{StaticResource white}" BorderBrush="Black" BorderThickness="1" Margin="20"  MinWidth="260">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <Border BorderThickness="0,0,0,5">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                                <GradientStop Color="Black" Offset=".7"/>
+                                <GradientStop Color="Transparent" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <TextBlock  Style="{StaticResource head}" TextAlignment="Center" Text="Zone Report">
+                            <TextBlock.Background>
+                                <LinearGradientBrush>
+
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+
+                        </TextBlock>
+                    </Border>
+                    <WrapPanel HorizontalAlignment="Center"
+                    Grid.Row="1">
+                        <StackPanel Margin="5">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Zone"/>
+                            <ComboBox SelectedItem="{Binding Zone,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="100" ItemsSource="{Binding Zones}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ZoneName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+                        <StackPanel Margin="5">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Type" MinWidth="100"/>
+                            <ComboBox Name="cboType" SelectionChanged="cboType_SelectionChanged" Text="{Binding Type,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem Content="Yearly"/>
+                                    <ComboBoxItem Content="Monthly"/>
+                                    <ComboBoxItem Content="Halfly"/>
+                                    <ComboBoxItem Content="Quarterly"/>
+                                    <ComboBoxItem Content="TillDate"/>
+
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </StackPanel>
+                        <WrapPanel Grid.Row="2" HorizontalAlignment="Center">
+                            <StackPanel Margin="5" Name="stpYear">
+                                <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Year"/>
+                                <ComboBox MinWidth="100" ItemsSource="{Binding Years}" Text="{Binding Year,Mode=TwoWay}" Name="cboYear"/>
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stpHalf">
+                                <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Half"/>
+                                <ComboBox MinWidth="100" Name="cboHalf" Text="{Binding Half,Mode=TwoWay}">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="1st"/>
+                                        <ComboBoxItem Content="2nd"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stpQuarter">
+                                <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Quarter"/>
+                                <ComboBox MinWidth="100" Text="{Binding Quarter,Mode=TwoWay}">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="1st"/>
+                                        <ComboBoxItem Content="2nd"/>
+                                        <ComboBoxItem Content="3rd"/>
+                                        <ComboBoxItem Content="4th"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                            </StackPanel>
+                            <StackPanel Margin="5" Name="stpMonth">
+                                <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Month"/>
+                                <ComboBox MinWidth="100" SelectedIndex="{Binding Month,Mode=TwoWay}">
+                                    <ComboBox.Items>
+                                        <ComboBoxItem Content="January"/>
+                                        <ComboBoxItem Content="February"/>
+                                        <ComboBoxItem Content="March"/>
+                                        <ComboBoxItem Content="April"/>
+                                        <ComboBoxItem Content="May"/>
+                                        <ComboBoxItem Content="June"/>
+                                        <ComboBoxItem Content="July"/>
+                                        <ComboBoxItem Content="August"/>
+                                        <ComboBoxItem Content="September"/>
+                                        <ComboBoxItem Content="October"/>
+                                        <ComboBoxItem Content="November"/>
+                                        <ComboBoxItem Content="December"/>
+                                    </ComboBox.Items>
+                                </ComboBox>
+                            </StackPanel>
+                        </WrapPanel>
+                    </WrapPanel>
+                    <WrapPanel HorizontalAlignment="Center" Grid.Row="3">
+                        <Button Name="btnGenerateZoneReport" Command="{Binding GenerateReportCommand}" Margin="10" Content="Generate" 
+                            Click="btnGenerateZoneReport_Click"/>
+                    </WrapPanel>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" />
+                </Border.Effect>
+            </Border>
+
+            <Border Grid.Row="1" Background="{StaticResource white}" BorderBrush="Black" BorderThickness="1" Margin="20"  MinWidth="260">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <Border BorderThickness="0,0,0,5">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                                <GradientStop Color="Black" Offset=".7"/>
+                                <GradientStop Color="Transparent" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <TextBlock  Style="{StaticResource head}" TextAlignment="Center" Text="Monthly PrintOut">
+                            <TextBlock.Background>
+                                <LinearGradientBrush>
+
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+
+                        </TextBlock>
+                    </Border>
+                    <WrapPanel HorizontalAlignment="Center"
+                    Grid.Row="1">
+                        <StackPanel Margin="5">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Area"/>
+                            <ComboBox SelectedItem="{Binding PrintArea,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" MinWidth="100" ItemsSource="{Binding Areas}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding AreaName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="5" >
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Year"/>
+                            <ComboBox MinWidth="100" ItemsSource="{Binding Years}" Text="{Binding PrintYear,Mode=TwoWay}"/>
+                        </StackPanel>
+
+
+                        <StackPanel Margin="5">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Month"/>
+                            <ComboBox MinWidth="100" SelectedIndex="{Binding PrintMonth,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem Content="January"/>
+                                    <ComboBoxItem Content="February"/>
+                                    <ComboBoxItem Content="March"/>
+                                    <ComboBoxItem Content="April"/>
+                                    <ComboBoxItem Content="May"/>
+                                    <ComboBoxItem Content="June"/>
+                                    <ComboBoxItem Content="July"/>
+                                    <ComboBoxItem Content="August"/>
+                                    <ComboBoxItem Content="September"/>
+                                    <ComboBoxItem Content="October"/>
+                                    <ComboBoxItem Content="November"/>
+                                    <ComboBoxItem Content="December"/>
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </StackPanel>
+                    </WrapPanel>
+                    <WrapPanel HorizontalAlignment="Center" Grid.Row="3">
+                        <Button Name="btnGeneratePrintOut" Click="btnGeneratePrintOut_Click" Command="{Binding GeneratePrintOutCommand}" Margin="10" Content="Generate" />
+                    </WrapPanel>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" />
+                </Border.Effect>
+            </Border>
+
+
+            <Border Grid.Row="2" Background="{StaticResource white}" BorderBrush="Black" BorderThickness="1" Margin="20"  MinWidth="260">
+                <Grid >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+
+                    </Grid.ColumnDefinitions>
+
+
+                    <Border BorderThickness="0,0,0,5">
+                        <Border.BorderBrush>
+                            <LinearGradientBrush StartPoint=".5,0" EndPoint=".5,1">
+                                <GradientStop Color="Black" Offset=".7"/>
+                                <GradientStop Color="Transparent" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.BorderBrush>
+                        <TextBlock  Style="{StaticResource head}" TextAlignment="Center" Text="Analyis Report">
+                            <TextBlock.Background>
+                                <LinearGradientBrush>
+
+                                </LinearGradientBrush>
+                            </TextBlock.Background>
+
+                        </TextBlock>
+                    </Border>
+
+
+                    <WrapPanel HorizontalAlignment="Center"
+                    Grid.Row="1">
+
+                        <StackPanel Margin="5">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Type" MinWidth="100"/>
+                            <ComboBox Name="cboAnalysisType" SelectionChanged="cboAnalysisType_SelectionChanged" Text="{Binding AnalysisType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem Content="Yearly"/>
+                                    <ComboBoxItem Content="Monthly"/>
+                                    <ComboBoxItem Content="TillDate"/>
+
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <StackPanel Margin="5">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Kind" MinWidth="100"/>
+                            <ComboBox Name="cboAnalysisKind" Text="{Binding AnalysisKind,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem Content="Zone"/>
+                                    <ComboBoxItem Content="Area"/>
+                                    <ComboBoxItem Content="Group"/>
+
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </StackPanel>
+
+
+
+
+                        <StackPanel Visibility="Collapsed" Margin="5"  Name="stpAnalysisYear">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Year"/>
+                            <ComboBox MinWidth="100" ItemsSource="{Binding Years}" Text="{Binding AnalysisYear,Mode=TwoWay}"/>
+                        </StackPanel>
+
+
+                        <StackPanel Visibility="Collapsed" Margin="5" Name="stpAnalysisMonth">
+                            <TextBlock Style="{StaticResource tbGradient}" TextAlignment="Center" Text="Month"/>
+                            <ComboBox MinWidth="100" SelectedIndex="{Binding AnalysisMonth,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem Content="January"/>
+                                    <ComboBoxItem Content="February"/>
+                                    <ComboBoxItem Content="March"/>
+                                    <ComboBoxItem Content="April"/>
+                                    <ComboBoxItem Content="May"/>
+                                    <ComboBoxItem Content="June"/>
+                                    <ComboBoxItem Content="July"/>
+                                    <ComboBoxItem Content="August"/>
+                                    <ComboBoxItem Content="September"/>
+                                    <ComboBoxItem Content="October"/>
+                                    <ComboBoxItem Content="November"/>
+                                    <ComboBoxItem Content="December"/>
+                                </ComboBox.Items>
+                            </ComboBox>
+                        </StackPanel>
+                    </WrapPanel>
+                    <WrapPanel HorizontalAlignment="Center" Grid.Row="3">
+                        <Button Name="btnGenerateAnalysis" Margin="10" Click="btnGenerateAnalysis_Click" Content="Analyze" />
+                    </WrapPanel>
+                </Grid>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" />
+                </Border.Effect>
+            </Border>
+
+        </Grid>
+    </ScrollViewer>
+</Page>

@@ -1,0 +1,5 @@
+F:\Projects\Web\ShortBody\ViewModels\bin\Debug\ViewModels.dll
+F:\Projects\Web\ShortBody\ViewModels\bin\Debug\ViewModels.pdb
+F:\Projects\Web\ShortBody\ViewModels\obj\Debug\ViewModels.csprojResolveAssemblyReference.cache
+F:\Projects\Web\ShortBody\ViewModels\obj\Debug\ViewModels.dll
+F:\Projects\Web\ShortBody\ViewModels\obj\Debug\ViewModels.pdb

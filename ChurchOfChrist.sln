@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "COC", "ShortBody\COC.csproj", "{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Debug|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Debug|Any CPU.Build.0 = Release|Any CPU
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Debug|x86.ActiveCfg = Release|x86
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Debug|x86.Build.0 = Release|x86
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Release|x86.ActiveCfg = Release|x86
+		{F7DCB132-5E03-4F9C-B81E-46B6F441D51D}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {96C6F194-36E4-4084-9E42-9E5A118325FA}
+	EndGlobalSection
+EndGlobal

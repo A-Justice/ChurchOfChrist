@@ -1,0 +1,128 @@
+﻿<UserControl x:Class="ShortBody.MiniPages.DetailsMini"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShortBody.MiniPages"
+        xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+      xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" >
+    <UserControl.Resources>
+        <Style x:Key="tbOutline" TargetType="TextBlock" BasedOn="{StaticResource tb}">
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+        <Style x:Key="tb" TargetType="TextBlock" BasedOn="{StaticResource tb}">
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer VerticalScrollBarVisibility="auto">
+        <Grid Height="850" Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding SelectedPerson}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="87*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2">
+                <Image  Height="100" Width="100" Source="{Binding Picture,Converter={cv:ByteToImageConverter}}" Margin="10"/>
+            </StackPanel>
+
+            <StackPanel Margin="5" Grid.Row="2">
+                <TextBlock  Style="{StaticResource tbOutline}" Text="Ghana Card Id :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock  Style="{StaticResource tbOutline}" Text="FirstName :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Margin="10" Style="{StaticResource tbOutline}" VerticalAlignment="Center" TextAlignment="Right" Text="LastName :" 
+                                   />
+                <TextBlock Margin="10" Style="{StaticResource tbOutline}" VerticalAlignment="Center" TextAlignment="Right" Text="OtherNames :" 
+                                   />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Date Of Birth :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Phone :" TextAlignment="Right" Margin="10" VerticalAlignment="Center"/>
+                <TextBlock Style="{StaticResource tbOutline}" Text="Gender :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Marital Status :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Membership Date :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Service :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Residential Area :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="BloodGroup :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Home Address (Gps) :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Margin="5" Grid.Row="2">
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding GhanaCardId}" Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding FirstName}" Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding LastName}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding OtherNames}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding DateOfBirth,Converter={cv:LongDateFormatter}}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Phone}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Gender}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding MaritalStatus}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding MembershipDate,Converter={cv:LongDateFormatter}}" TextAlignment="Left"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding Service}" TextAlignment="Left"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding ResidentialArea}" TextAlignment="Left"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding BloodGroup}" TextAlignment="Left"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding HomeAddressGps}" TextAlignment="Left"  Margin="5,10,5,10"/>
+
+            </StackPanel>
+            <StackPanel Grid.Column="2" Margin="5" Grid.Row="2">
+
+                <TextBlock Style="{StaticResource tbOutline}" Text="HomeTown Address (Gps) :" TextAlignment="Right" Margin="10,10,0,10" 
+                                   VerticalAlignment="Center" HorizontalAlignment="Left" Width="160"/>
+                <TextBlock Style="{StaticResource tbOutline}" Text="Email Adress :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center"/>
+                <!--<TextBlock Style="{StaticResource tbOutline}" Text="Address :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />-->
+                <TextBlock Style="{StaticResource tbOutline}" Text="Baptism Date :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Place Of Baptism :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Family :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Zone :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Height="55" Style="{StaticResource tbOutline}" Text="Area :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Group :" Height="55" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Visibility="{Binding Group,Converter={cv:ContentToVisibilityConverter}}"/>
+                <TextBlock Style="{StaticResource tbOutline}" Text="Class :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Visibility="{Binding Class,Converter={cv:ContentToVisibilityConverter}}"/>
+                <TextBlock Style="{StaticResource tbOutline}" Text="Membership Type :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                <TextBlock Style="{StaticResource tbOutline}" Text="Status :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+            </StackPanel>
+            <StackPanel Grid.Column="3" Margin="5" Grid.Row="2">
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding HomeTownAddressGps}" Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Email}" Margin="5,10,5,10"/>
+                <!--<TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Address}"  Margin="5,10,5,10"/>-->
+                <TextBlock Style="{StaticResource tb}" Text="{Binding BaptismDate,Converter={cv:LongDateFormatter}}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" Text="{Binding PlaceOfBaptism,Converter={cv:LongDateFormatter}}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Family.FamilyName}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Group.Area.Zone.ZoneName}"  Margin="5,10,5,10"/>
+                <TextBlock  VerticalAlignment="Center" Height="55" TextAlignment="Left" Text="{Binding Group.Area.AreaName}" Style="{StaticResource tb}"  Margin="5,10,5,10"/>
+                <TextBlock  VerticalAlignment="Center" Height="55" TextAlignment="Left" Text="{Binding Group.Name}" Style="{StaticResource tb}" Visibility="{Binding Group,Converter={cv:ContentToVisibilityConverter}}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Class.Name}" TextWrapping="Wrap" Visibility="{Binding Class,Converter={cv:ContentToVisibilityConverter}}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding MembershipType}"  Margin="5,10,5,10"/>
+                <TextBlock Style="{StaticResource tb}" VerticalAlignment="Center" TextAlignment="Left" Text="{Binding Status}"  Margin="5,10,5,10"/>
+            </StackPanel>
+
+        </Grid>
+
+    </ScrollViewer>
+
+</UserControl>

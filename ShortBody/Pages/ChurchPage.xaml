@@ -1,0 +1,288 @@
+﻿<UserControl x:Class="ShortBody.Pages.ChurchPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:an="clr-namespace:ShortBody.Resources.Helper_Methods"
+      xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+      mc:Ignorable="d" 
+      d:DesignHeight="800" d:DesignWidth="1700"
+      >
+
+
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Margin="20,5,20,5" Height="40"
+                    Background="{DynamicResource MaterialDesignPaper}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        Margin="5,0,5,0"
+                        >
+                <TextBlock Text="SearchBy :" VerticalAlignment="Center"
+                           FontSize="17"/>
+                <ComboBox Width="80" VerticalAlignment="Center" Name="cboSearchBox"
+                          Text="{Binding SearchBy}" Margin="5,0,5,0"
+                          SelectionChanged="cboSearchBox_SelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="All"/>
+                        <ComboBoxItem Content="Name"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <TextBox KeyUp="txtSearchBox_KeyUp" Width="150" Margin="10,0,5,0" Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                          Name="txtSearchBox"/>
+
+                <Button  Style="{StaticResource BoderlessButton}"
+                         FontSize="17" Margin="5,0,5,0"
+                         Command="{Binding SearchChurchCommand}">
+                    Search
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
+        <ctr:miniWindow  Background="Transparent" HeaderText="All Churches"
+                        Grid.Row="1" Grid.RowSpan="2" CanClose="False">
+
+            <ctr:miniWindow.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel
+                        Background="{StaticResource myDirtyWhite}">
+                        <Button  Margin="5" ToolTip="Add New Church" 
+                    Style="{StaticResource b_Button}" Click="btnAddChurch_Click" Content="Add Church"/>
+                        <Rectangle Fill="White" Width="1" Margin="5,5,1,5"/>
+
+                        <Button  Margin="1,5,5,5" Style="{StaticResource b_Button}" Command="{Binding DeleteChurchCommand}">
+                            <StackPanel Orientation="Horizontal" ToolTip="Delete Church">
+                                <fa:ImageAwesome Icon="Trash" Width="20"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Rectangle Fill="White" Width="1" Margin="5,5,1,5"/>
+
+                    
+
+                        
+                        <Button  Margin="5" ToolTip="Add New Account Detail" 
+                                 Command="{Binding GeneralCommand}"
+                    Style="{StaticResource b_Button}"
+                                 Click="AddAccDetail_Click" Content="Add Account Detail"/>
+
+
+
+
+
+                        <Button  Margin="5" ToolTip="View Account Details" Command="{Binding GeneralCommand}"
+                    Style="{StaticResource b_Button}" Click="ViewAccDetail_Click" Content="View Account Detail"/>
+
+                        <Button  Margin="5" ToolTip="Change Selected Church's Logo" Command="{Binding GeneralCommand}"
+                    Style="{StaticResource b_Button}" Click="ChangeImage_Click" HorizontalAlignment="Right">
+                            <fa:ImageAwesome Icon="Image" Height="20" />
+                        </Button>
+
+                        
+
+                    </DockPanel>
+
+                    <DataGrid ScrollViewer.CanContentScroll="False" ItemsSource="{Binding AllChurches,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Foreground="Black"
+                           Grid.RowSpan="2"  ColumnWidth="*"   Grid.Row="1" SelectionChanged="MainChurchGrid_SelectionChanged" an:DataGridExtension.HideAnnotatedColumns="True"
+          CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserAddRows="False"
+          CanUserResizeRows="False" CanUserSortColumns="True" FontSize="13">
+                        
+                    </DataGrid>
+                </Grid>
+            </ctr:miniWindow.Content>
+        </ctr:miniWindow>
+
+        <ctr:miniWindow Grid.Row="1" Grid.Column="1" HeaderText="Add Church" 
+                        x:Name="AddChurchWindow" Width="600"  
+                        Loaded="churchWindow_Loaded"
+                       >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="241*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+
+                    <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}"
+                             ToolTip="Clear Boxes" Command="{Binding ClearBoxes}">
+                        <fa:ImageAwesome Icon="PaintBrush" Width="20" Margin="3,0,0,0"/>
+
+                    </Button>
+
+                </StackPanel>
+
+                <Grid Grid.Row="1" Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding NewChurch}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="87*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Height="100" Grid.Column="1" Margin="10" 
+                           Source="{Binding Logo,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor} ,Path=DataContext }"/>
+                    <StackPanel  VerticalAlignment="Center"  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor} ,Path=DataContext}"
+                                 >
+                        <TextBlock Style="{StaticResource tb}" Text="Logo :" HorizontalAlignment="Right"/>
+                        <Button Content="Browse" Style="{StaticResource b_Button}" Command="{Binding BrowseCommand}"
+                                Margin="10" Width="60" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    <TextBlock Style="{StaticResource tb}" Text="{Binding Error,UpdateSourceTrigger=PropertyChanged}" Margin="5"
+                               Grid.Column="2" VerticalAlignment="Center"
+                                   TextAlignment="Center" Foreground="#CA5100" Grid.ColumnSpan="2"
+                                   DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor} ,Path=DataContext }"/>
+
+                    <StackPanel Margin="5" Grid.Row="1">
+                        <TextBlock Style="{StaticResource tb}" Text="Name :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                        <TextBlock Style="{StaticResource tb}" Text="Address :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                        <TextBlock Style="{StaticResource tb}" Text="Slogan :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="5" Grid.Row="1">
+                        <TextBox Text="{Binding Name}"  Margin="5,10,5,10"/>
+                        <TextBox Text="{Binding Address}"  Margin="5,10,5,10"/>
+                        <TextBox Text="{Binding Slogan}"  Margin="5,10,5,10"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="5" Grid.Row="1">
+                        <TextBlock Style="{StaticResource tb}" Text="Phone :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                        <TextBlock Style="{StaticResource tb}" Text="Email Adress :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="3" Margin="5" Grid.Row="1">
+                        <TextBox Text="{Binding Phone}"  Margin="5,10,5,10"/>
+                        <TextBox Text="{Binding Email}"  Margin="5,10,5,10"/>
+                        <Button Content="Save" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor} ,Path=DataContext }"
+                                Command="{Binding SaveChurchCommand}" Width="50"
+                              Margin="20"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ctr:miniWindow>
+
+        <Grid Grid.Row="1" Grid.Column="1">
+
+         
+
+            <ctr:miniWindow HeaderText="Add Account Detail" 
+                         x:Name="AddAccDetailWindow" 
+                             Loaded="churchWindow_Loaded" 
+                       >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+
+                        <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}"
+                             ToolTip="Clear Boxes" Command="{Binding ClearBoxes}">
+                            <fa:ImageAwesome Icon="PaintBrush" Width="20" Margin="3,0,0,0"/>
+
+                        </Button>
+
+                    </StackPanel>
+
+                    <Grid Grid.RowSpan="2" Grid.Row="1" Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding NewChurchAccount}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="87*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource tb}" Text="{Binding Error,UpdateSourceTrigger=PropertyChanged}" Margin="5"
+                                   TextAlignment="Center" Foreground="#CA5100" Grid.ColumnSpan="4"
+                                   DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor} ,Path=DataContext }"/>
+
+                        <StackPanel Grid.Column="0" Margin="5" Grid.Row="1">
+                            <TextBlock Style="{StaticResource tb}" Text="Account Name :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                            <TextBlock Style="{StaticResource tb}" Text="Account Number :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                            <TextBlock Style="{StaticResource tb}" Text="Bank Name :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                            <TextBlock Style="{StaticResource tb}" Text="Bank Branch :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Margin="5" Grid.Row="1" MinWidth="100">
+                            <TextBox Text="{Binding AccountName}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding AccountNumber}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding BankName}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding BankBranch}"  Margin="5,10,5,10"/>
+                            <Button Content="Save" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor} ,Path=DataContext }"
+                                Command="{Binding SaveAccountCommand}" Width="50"/>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </ctr:miniWindow>
+
+
+        </Grid>
+
+        <ctr:miniWindow Grid.Row="3" MaxHeight="350" x:Name="ViewAccWindow"
+                        Grid.ColumnSpan="2" HeaderText="Account Details">
+            <ctr:miniWindow.Content>
+                <Grid Background="{DynamicResource MaterialDesignPaper}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+
+                        <Button  Margin="10,5,5,5" Style="{StaticResource b_Button}"
+                             ToolTip="Delete Account Detail" Command="{Binding DeleteAccDetailCommand}">
+                            <fa:ImageAwesome Icon="Trash" Width="20"/>
+
+                        </Button>
+
+                    </StackPanel>
+                    <!-- DataContext="{Binding FocusedChurch,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"-->
+                    <DataGrid Grid.Row="1" 
+                             ColumnWidth="*" ItemsSource="{Binding FocusedChurch.AccountDetails,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                              an:DataGridExtension.HideAnnotatedColumns="True" Margin="30" AutoGenerateColumns="True"
+                              CanUserAddRows="False"
+                                  SelectionChanged="AccountGrid_SelectionChanged" TargetUpdated="DataGrid_TargetUpdated" >
+
+                    </DataGrid>
+                </Grid>
+            </ctr:miniWindow.Content>
+
+        </ctr:miniWindow>
+    </Grid>
+</UserControl>

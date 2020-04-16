@@ -1,0 +1,75 @@
+﻿<Window x:Class="ShortBody.Windows.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShortBody.Windows"
+        mc:Ignorable="d" Width="550"
+        Height="200"
+        Title="Settings" WindowStartupLocation="CenterScreen" >
+    <Grid Margin="20">
+        <StackPanel >
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Width="250" TextAlignment="Right" FontSize="15" VerticalAlignment="Center" Margin="5" Text="Maximum No Of People in Group :"/>
+                <ComboBox Name="cboMaxGroupPeople" IsEnabled="False" Text="{Binding MaxGroupNumber}" Margin="5" Width="120" HorizontalContentAlignment="Center">
+                    <ComboBox.Items>
+                        <ComboBoxItem>0</ComboBoxItem>
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>Unlimited</ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <Button Name="btnChangeMaxGroupPeople" Click="btnChangeMaxGroupPeople_Click" Content="Change"/>
+            </StackPanel>
+            <StackPanel Margin="10" Orientation="Horizontal">
+                <TextBlock Width="250" TextAlignment="Right"  FontSize="15" VerticalAlignment="Center" Margin="5" Text="Maximum No Of People in Class :"/>
+                <ComboBox  IsEnabled="false" Text="{Binding MaxClassNumber}" Name="cboMaxClassPeople"  Margin="5" Width="120" HorizontalContentAlignment="Center">
+                    <ComboBox.Items>
+                        <ComboBoxItem>0</ComboBoxItem>
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                        <ComboBoxItem>6</ComboBoxItem>
+                        <ComboBoxItem>7</ComboBoxItem>
+                        <ComboBoxItem>8</ComboBoxItem>
+                        <ComboBoxItem>9</ComboBoxItem>
+                        <ComboBoxItem>10</ComboBoxItem>
+                        <ComboBoxItem>11</ComboBoxItem>
+                        <ComboBoxItem>12</ComboBoxItem>
+                        <ComboBoxItem>13</ComboBoxItem>
+                        <ComboBoxItem>14</ComboBoxItem>
+                        <ComboBoxItem>15</ComboBoxItem>
+                        <ComboBoxItem>16</ComboBoxItem>
+                        <ComboBoxItem>17</ComboBoxItem>
+                        <ComboBoxItem>18</ComboBoxItem>
+                        <ComboBoxItem>19</ComboBoxItem>
+                        <ComboBoxItem>20</ComboBoxItem>
+                        <ComboBoxItem>Unlimited</ComboBoxItem>
+                    </ComboBox.Items>
+                </ComboBox>
+                <Button Name="btnChangeMaxClassPeople" Click="btnChangeMaxClassPeople_Click" Content="Change"/>
+            </StackPanel>
+            
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,311 @@
+﻿<Page x:Class="ShortBody.Pages.PeoplePage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+       xmlns:an="clr-namespace:ShortBody.Resources.Helper_Methods"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+          xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+          xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+          xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" ShowsNavigationUI="False"
+      >
+    <Page.Resources>
+        <!--<Style TargetType="DatePicker">
+            <Setter Property="Height" Value="34"/>
+        </Style>-->
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Margin="20,5,20,5" Height="40"
+                    Background="{DynamicResource MaterialDesignPaper}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        Margin="5,0,5,0"
+                        >
+                <TextBlock Text="SearchBy :" VerticalAlignment="Center"
+                           FontSize="17"/>
+                <ComboBox MinWidth="80" VerticalAlignment="Center" Name="cboSearchBox"
+                          Text="{Binding SearchBy,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Margin="5,0,5,0" SelectionChanged="cboSearchBox_SelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="All"/>
+                        <ComboBoxItem Content="Name"/>
+                        <ComboBoxItem Content="Area"/>
+                        <ComboBoxItem Content="Ministry"/>
+                        <ComboBoxItem Content="FamilyName"/>
+                        <ComboBoxItem Content="BirthDate"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <TextBox KeyUp="txtSearchBox_KeyUp" Width="150" Margin="10,0,5,0" Name="txtSearchBox" Visibility="Collapsed"
+                          Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+
+                <Button  Style="{StaticResource BoderlessButton}"
+                         FontSize="17" Margin="5,0,5,0"
+                         Command="{Binding SearchPersonCommand}">
+                    Search
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <ctr:miniWindow Background="Transparent" HeaderText="All Persons"
+                        Grid.Row="1" Grid.RowSpan="3" CanClose="False">
+
+            <ctr:miniWindow.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+                        <Button  Margin="5" ToolTip="Add New Person" 
+                    Style="{StaticResource b_Button}" Click="btnAddPerson_Click">
+                            Add Person
+                        </Button>
+                        <Rectangle Fill="White" Width="1" Margin="5,5,5,5"/>
+
+                        <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}" Command="{Binding DeletePersonCommand}">
+                                Delete Person                        
+                        </Button>
+                        <Button Click="btnEditPerson_Click" Margin="5,5,5,5" Style="{StaticResource b_Button}" Command="{Binding EditClickCommand}">
+                            Edit Person
+                        </Button>
+
+                    </StackPanel>
+
+                    <DataGrid  ItemsSource="{Binding AllPeople,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Foreground="Black"
+                            ColumnWidth="*"    Grid.Row="1" SelectionChanged="MainPersonGrid_SelectionChanged"
+          CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserAddRows="False"
+          CanUserResizeRows="False" CanUserSortColumns="True" FontSize="13" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <md:MaterialDataGridTextColumn Width="50" Header="Id" Binding="{Binding PersonId}"/>
+
+                            <md:MaterialDataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                        <md:MaterialDataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                        </DataGrid.Columns>
+                       
+                    </DataGrid>
+                </Grid>
+            </ctr:miniWindow.Content>
+        </ctr:miniWindow>
+
+        <ctr:miniWindow Grid.Row="1" Grid.Column="1" HeaderText="Add Person" 
+                       x:Name="AddPersonWindow" Width="600" 
+                        Loaded="AddPersonWindow_Loaded">
+            <Grid >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="241*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+
+                    <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}"
+                             
+                             ToolTip="Clear Boxes" Command="{Binding ClearBoxes}">
+                        <fa:ImageAwesome Icon="PaintBrush" Width="20" Margin="3,0,0,0"/>
+
+                    </Button>
+
+                </StackPanel>
+                <ScrollViewer Grid.Row="1"  VerticalScrollBarVisibility="Auto">
+                    <Grid  VerticalAlignment="Top"  Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding NewPerson}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="87*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource tb}" Text="{Binding Error,UpdateSourceTrigger=PropertyChanged}" Margin="5"
+                                   TextAlignment="Center" Foreground="#CA5100" Grid.ColumnSpan="4"
+                                  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"/>
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                            <!--DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}"-->
+                            <Image  Grid.Row="1" Height="100" Width="100" 
+                            Source="{Binding Picture,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={cv:ByteToImageConverter}}"/>
+                            <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" Content="Choose Picture"  Height="30" Margin="10" 
+                                Command="{Binding BrowsePicCommand}" Width="150"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="5" Grid.Row="2">
+                            <TextBlock Style="{StaticResource tb}" Text="Ghana Card Id :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="*FirstName :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="*LastName :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="OtherNames :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="*Date Of Birth :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="*Phone :" TextAlignment="Right" Margin="10" VerticalAlignment="Center"/>
+                            <TextBlock Style="{StaticResource tb}" Text="*Gender :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="Marital Status :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <!--<TextBlock Style="{StaticResource tb}" Text="Membership Date :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />-->
+                            <TextBlock Style="{StaticResource tb}" Text="Service :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="ResidentialArea :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5" Grid.Row="2">
+                            <TextBox Text="{Binding GhanaCardId}" Margin="5,0,5,10"/>
+                            <TextBox Text="{Binding FirstName}" Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding LastName}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding OtherNames}"  Margin="5,10,5,10"/>
+                            <DatePicker DisplayDate="1/1/2018" SelectedDate="{Binding DateOfBirth,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Height="33"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding Phone}"  Margin="5,10,5,10"/>
+                            <ComboBox Margin="5,10,5,10" Text="{Binding Gender,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem>Male</ComboBoxItem>
+                                    <ComboBoxItem>Female</ComboBoxItem>
+                                </ComboBox.Items>
+                            </ComboBox>
+                            <ComboBox Margin="5,10,5,10" Text="{Binding MaritalStatus,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}">
+                                <ComboBox.Items>
+                                    <ComboBoxItem>Married</ComboBoxItem>
+                                    <ComboBoxItem>Single</ComboBoxItem>
+                                    <ComboBoxItem>Divorced</ComboBoxItem>
+                                    <ComboBoxItem>Widowed</ComboBoxItem>
+                                </ComboBox.Items>
+                            </ComboBox>
+                            <!--<DatePicker Height="33" DisplayDateStart="1/1/2018" SelectedDate="{Binding MembershipDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10"/>-->
+                            <ComboBox Text="{Binding Service,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10" SelectionChanged="cboService_SelectionChanged">
+                                <ComboBox.Items>
+                                    <ComboBoxItem>Children</ComboBoxItem>
+                                    <ComboBoxItem>Adults</ComboBoxItem>
+                                </ComboBox.Items>
+                            </ComboBox>
+
+                            <TextBox Text="{Binding ResidentialArea}"  Margin="5,10,5,10"/>
+
+                        </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="5" Grid.Row="2">
+
+                            <TextBlock Style="{StaticResource tb}" Text="Email Adress :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center"/>
+                            <!--<TextBlock Style="{StaticResource tb}" Text="Address :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />-->         
+                            <TextBlock Style="{StaticResource tb}" Text="Home Address (Gps) :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />                           
+                            <TextBlock Style="{StaticResource tb}" Text="HomeTown Address (Gps) :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="Baptism Date :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" /> 
+                            <TextBlock Style="{StaticResource tb}" Text="Place Of Baptism :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="Family :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="Group" TextAlignment="Right" Margin="10"
+                                   VerticalAlignment="Center" Loaded="TextBlock_Loaded" />
+                            <!--<TextBlock Style="{StaticResource tb}" Text="Membership Type :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />-->
+                            <TextBlock Style="{StaticResource tb}" Text="Blood Group :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" /> 
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Margin="5" Grid.Row="2">
+                            <TextBox Text="{Binding Email}" Margin="5,0,5,10"/>
+                            <!--<TextBox Text="{Binding Address}"  Margin="5,10,5,10"/>-->
+                            <TextBox Text="{Binding HomeAddressGps}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding HomeTownAddressGps}"  Margin="5,10,5,10"/>
+                            <DatePicker Height="33" SelectedDate="{Binding BaptismDate,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding PlaceOfBaptism}"  Margin="5,10,5,10"/>
+
+                            <ComboBox SelectedItem="{Binding Family,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10" Loaded="cboFamily_Loaded">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding FamilyName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                            <ComboBox DataContext="{Binding RelativeSource={RelativeSource Mode=FindAncestor,AncestorType=Page},Path=DataContext}" SelectedItem="{Binding Association,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                                      Margin="5,10,5,10" Loaded="cboAssociation_Loaded">
+                                    <ComboBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Name}"/>
+                                        </DataTemplate>
+                                    </ComboBox.ItemTemplate>
+                            </ComboBox>
+
+                
+                            <!--<ComboBox Text="{Binding MembershipType,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10">
+                                <ComboBoxItem>Member</ComboBoxItem>
+                                <ComboBoxItem>Visitor</ComboBoxItem>
+                                <ComboBoxItem>Other</ComboBoxItem>
+                            </ComboBox>-->
+                            <ComboBox Text="{Binding BloodGroup,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10">
+                                <ComboBoxItem>A+</ComboBoxItem>
+                                <ComboBoxItem>A-</ComboBoxItem>
+                                <ComboBoxItem>B+</ComboBoxItem>
+                                <ComboBoxItem>B-</ComboBoxItem>
+                                <ComboBoxItem>AB+</ComboBoxItem>
+                                <ComboBoxItem>AB-</ComboBoxItem>
+                                <ComboBoxItem>O+</ComboBoxItem>
+                                <ComboBoxItem>O-</ComboBoxItem>
+                            </ComboBox>
+                            <Button Content="Save" Margin="10" Width="70"
+                                DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                               Command="{Binding SaveNewPersonCommand}" Loaded="Button_Loaded"/>
+                            <Button Content="Save Changes" Margin="10" Width="70" Click="btnEdit_Click"
+                                DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                               Command="{Binding EditPersonCommand}" Visibility="Collapsed" Loaded="Button_Loaded" />
+                        </StackPanel>
+
+                    </Grid>
+
+                </ScrollViewer>
+            </Grid>
+        </ctr:miniWindow>
+
+        <ctr:miniWindow Grid.Row="1" Grid.Column="1"  
+                        x:Name="PersonWindow" Width="600"
+                        Loaded="PersonWindow_Loaded" Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="241*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+                    <Button  Margin="5" ToolTip="View Person's Details" 
+                    Style="{StaticResource b_Button}" Click="btnDetails_Click">
+                       Details 
+                    </Button>
+                    <Button  Margin="5" ToolTip="View Person's Family" 
+                    Style="{StaticResource b_Button}" Click="btnFamily_Click">
+                        Family
+                    </Button>
+                    <Button  Margin="5" ToolTip="View Person's Services" 
+                    Style="{StaticResource b_Button}" Click="btnServices_Click">
+                        Services
+                    </Button>
+
+
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
+                    <Frame Loaded="Frame_Loaded" >
+                        
+                    </Frame>
+                </ScrollViewer>
+            </Grid>
+        </ctr:miniWindow>
+    </Grid>
+</Page>

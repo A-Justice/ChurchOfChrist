@@ -1,0 +1,118 @@
+﻿<UserControl x:Class="ShortBody.Resources.UserControls.DocumentControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+              xmlns:wpf="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
+             xmlns:local="clr-namespace:ShortBody.Resources.UserControls"
+                    xmlns:fa="http://schemas.fontawesome.io/icons/"
+                           xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+                    xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+             mc:Ignorable="d" 
+             d:DesignHeight="600" d:DesignWidth="600">
+    <UserControl.Resources>
+        <BooleanToVisibilityConverter x:Key="btvConverter"/>
+
+        <Style TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBox}">
+            <Setter Property="BorderThickness" Value="0,0,0,0"/>
+
+        </Style>
+    </UserControl.Resources>
+    <UserControl.Template>
+        <!--TargetType="local:DocumentControl"-->
+        <ControlTemplate TargetType="local:DocumentControl" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" Margin="5" Name="topPanel" Loaded="topPanel_Loaded">
+                    <Button Click="Button_Click" >
+                        <fa:ImageAwesome Icon="Print" Width="40" Margin="5" ToolTip="Print"/>
+                    </Button>
+                    <Button Name="PreviewButton" Click="PreviewButton_Click">
+                        <fa:ImageAwesome Icon="search" Width="40" Margin="5"/>
+                    </Button>
+                </StackPanel>
+
+
+                <FlowDocumentScrollViewer  Grid.Row="1" Loaded="document_Loaded"
+                                        >
+                    <FlowDocument ColumnWidth="1000" Loaded="Fd_Loaded">
+                        <BlockUIContainer>
+                           
+                                <Grid Height="Auto" >
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                    <RowDefinition Height="30"/>
+                                </Grid.RowDefinitions>
+                                <TextBlock Name="onw"/>
+                                <!--<StackPanel DataContext="{TemplateBinding DataContext}">
+                                        <StackPanel HorizontalAlignment="Center" >
+                                        --><!--<StackPanel HorizontalAlignment="Center" Margin="10"
+                                        Orientation="Horizontal" VerticalAlignment="Center">
+                                                <Image Height="100" Width="100" Margin="0,0,20,0" Source="{TemplateBinding Logo}"/>
+                                                <TextBlock Text="{TemplateBinding ChurchName}" FontWeight="Bold" FontSize="17" Style="{StaticResource tb}"/>
+                                        </StackPanel>--><!--
+                                        <StackPanel Orientation="Horizontal" Margin="10">
+                                            --><!--Change the static resources to TemplateBinding--><!--
+                                                <TextBlock Text="{TemplateBinding What}" FontStyle="Oblique" FontSize="15" Margin="5"/>
+                                                <TextBlock Margin="5" FontStyle="Oblique" FontSize="15">Statement for</TextBlock>
+                                                <TextBlock Text="{TemplateBinding Who}" FontStyle="Oblique" FontSize="15" Margin="5"/>
+
+                                                <TextBlock Margin="5" FontStyle="Oblique" FontSize="15"
+                                                            Text=" In " />
+                                                <ComboBox Name="cboMonth" Loaded="cbo_Loaded" 
+                                                          Margin="5,0,5,0"
+                                                          SelectedIndex="0"
+                                                          SelectionChanged="cbo_SelectionChanged" >
+                                                   
+                                                </ComboBox>
+                                                <TextBlock Margin="5" FontStyle="Oblique" FontSize="15"
+                                                            Text=" of " />
+                                                <ComboBox Name="cboYear"  SelectedIndex="0"
+                                                          Margin="5,0,5,0"
+                                                          Loaded="cbo_Loaded"  SelectionChanged="cbo_SelectionChanged" />
+
+                                            </StackPanel>
+                                            
+                                    </StackPanel>
+
+                                        <StackPanel Orientation="Horizontal" Visibility="{TemplateBinding HasVat,Converter={StaticResource btvConverter}}"
+                                                    Margin="10">
+                                            <TextBlock Margin="5,0,5,0" Text="Total Vat Value (GHS) :"/>
+                                            <TextBlock Margin="5,0,5,0" Text="{TemplateBinding TotalVatValue,Converter={cv:DToSConverter}}" FontFamily="Arial"/>
+
+                                            <TextBlock Margin="20,0,5,0" Text="Total Amount (GHS) :"/>
+                                        <TextBlock Margin="5,0,5,0" Text="{TemplateBinding TotalAmount,Converter={cv:DToSConverter}}" FontFamily="Arial"/>
+                                        </StackPanel>
+                                      
+                                </StackPanel>-->
+
+                                <ContentPresenter Grid.Row="1" DataContext="{TemplateBinding DataContext}"/>
+
+                                <Grid Grid.Row="2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="Auto"/>
+                                    </Grid.ColumnDefinitions>
+                                        <TextBlock DataContext="{TemplateBinding DataContext}" Text="{TemplateBinding ChurchSlogan}"
+                               HorizontalAlignment="Center"/>
+                                    <TextBlock Text="{TemplateBinding CurrentDate}" Grid.Column="1" 
+                               HorizontalAlignment="Center" Margin="5,5,40,5"
+                               />
+                                </Grid>
+                            </Grid>
+                           
+                        </BlockUIContainer>
+                    </FlowDocument>
+                </FlowDocumentScrollViewer>
+
+
+
+
+            </Grid>
+        </ControlTemplate>
+    </UserControl.Template>
+</UserControl>

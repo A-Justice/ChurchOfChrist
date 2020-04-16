@@ -1,0 +1,124 @@
+﻿<Window x:Class="ShortBody.Reports.ZoneReport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShortBody.Reports"
+        xmlns:win="clr-namespace:ShortBody.Resources.UserControls"
+        mc:Ignorable="d" Unloaded="Window_Unloaded"
+                  xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+        WindowState="Maximized"
+        Title="ZoneReport" Height="450" Width="800">
+    <Grid>
+        
+        <win:DocumentControl x:Name="ZoneDocumentControl">
+            <StackPanel>
+                <Border Margin="10">
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+
+                        <TextBlock FontWeight="Bold" FontSize="18" Loaded="stpTertiary_Loaded"  Margin="5" Text="All Reports"/>
+
+                        <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Type}" Margin="5"/>
+                       
+                        <StackPanel Loaded="stpPrimary_Loaded" Orientation="Horizontal">
+
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="Report For" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Month,Converter={cv:IntToMonthConverter}}" Visibility="{Binding Month,Converter={cv:ContentToVisibilityConverter}}" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Year}" Margin="5"/>
+
+                        </StackPanel>
+                       
+                        <StackPanel  Loaded="stpHalf_Loaded" Orientation="Horizontal">
+
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="Report For" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Half}" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="Half of" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Year}" Margin="5"/>
+                        </StackPanel>
+                        
+                        <StackPanel  Loaded="stpQuarter_Loaded" Orientation="Horizontal">
+
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="Report For" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Quarter}" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="Quarter of" Margin="5"/>
+                            <TextBlock FontWeight="Bold" FontSize="18" Text="{Binding Year}" Margin="5"/>
+                        </StackPanel>
+
+                    </StackPanel>
+                </Border>
+               
+                <Border HorizontalAlignment="Center" Margin="10,5,10,5" BorderBrush="{StaticResource DeepBlue}" BorderThickness="2" >
+                    <StackPanel HorizontalAlignment="Center"  Orientation="Horizontal">
+                        <TextBlock Text="ZONE LEADER " Background="#F7F4F7" Padding="5" Margin="5">
+
+                        </TextBlock>
+                        <TextBlock Margin="5" Padding="5" FontWeight="Bold" Foreground="#CA5100" Text="{Binding Zone.ZoneLeaderId,Converter={cv:IdToPersonConverter}}"/>
+                    </StackPanel>
+                </Border>
+              
+                <DataGrid CanUserAddRows="False" ColumnWidth="*" AutoGenerateColumns="False" ItemsSource="{Binding Report}">
+                    <DataGrid.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <StackPanel>
+                                        <TextBlock Text="{Binding Name}"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                            <GroupStyle.ContainerStyle>
+                                <Style TargetType="{x:Type GroupItem}">
+                                    <Setter Property="Template">
+                                        <Setter.Value>
+                                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                                <Expander IsExpanded="True">
+                                                    <Expander.Header>
+                                                        <StackPanel VerticalAlignment="Center" Orientation="Horizontal" Background="LightBlue">
+                                                            <TextBlock MinWidth="200" Foreground="#CA5100" FontWeight="Bold"  Padding="5" Text="{Binding Name.AreaName}" Margin="10,10,10,10"
+                                                                    />
+                                                            <Border Margin="10,5,10,5" BorderBrush="{StaticResource DeepBlue}" BorderThickness="2" Background="{StaticResource DeepBlue}">
+                                                                <StackPanel  Orientation="Horizontal">
+                                                                    <TextBlock Text="Area Leader " Background="#F7F4F7" Padding="5" Margin="5">
+
+                                                                    </TextBlock>
+                                                                    <TextBlock Margin="5" Padding="5" FontWeight="Bold" Foreground="#F7F4F7" Text="{Binding Name.AreaLeaderId,Converter={cv:IdToPersonConverter}}"/>
+                                                                </StackPanel>
+                                                            </Border>
+                                                            <Border  Margin="10,5,10,5" BorderBrush="{StaticResource DeepBlue}" BorderThickness="2" Background="{StaticResource DeepBlue}">
+                                                                <StackPanel  Orientation="Horizontal">
+                                                                    <TextBlock Padding="5" Text="Number of People" Background="#F7F4F7" Margin="5"/>
+                                                                    <TextBlock Padding="5" Text="{Binding ItemCount}" Margin="5" FontWeight="Bold" Foreground="#F7F4F7"/>
+                                                                </StackPanel>
+                                                            </Border>
+
+                                                        </StackPanel>
+                                                    </Expander.Header>
+                                                    <ItemsPresenter />
+                                                </Expander>
+                                            </ControlTemplate>
+                                        </Setter.Value>
+                                    </Setter>
+                                </Style>
+                            </GroupStyle.ContainerStyle>
+                        </GroupStyle>
+                    </DataGrid.GroupStyle>
+                    <DataGrid.Columns>
+                        <DataGridTextColumn Width="60"  Header="Id" Binding="{Binding Person.PersonId}"/>
+                        <DataGridTextColumn  Header="Name" Binding="{Binding Person.FullName}"/>
+                        <DataGridTextColumn Width="150"  Header="Phone" Binding="{Binding Person.Phone}"/>
+                        <DataGridTextColumn Width="60"  Header="Sun" Binding="{Binding Sundays}"/>
+                        <DataGridTextColumn Width="60" Header="Tue" Binding="{Binding Tuesdays}"/>
+                        <DataGridTextColumn Width="60" Header="Fri" Binding="{Binding Fridays}"/>
+                        <DataGridTextColumn Width="120" Header="Sum Total" Binding="{Binding Total}"/>
+                        <DataGridTextColumn Header="Remarks" Binding="{Binding Remark}"/>
+                    </DataGrid.Columns>
+                    <DataGrid.RowStyle>
+                        <Style TargetType="DataGridRow">
+                            <Setter Property="Background" Value="{Binding Person.Group.Name,Converter={cv:RowBackgroundConverter}}"/>
+                        </Style>
+                    </DataGrid.RowStyle>
+                </DataGrid>
+            </StackPanel>
+        </win:DocumentControl>
+    </Grid>
+</Window>

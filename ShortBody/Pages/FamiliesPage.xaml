@@ -1,0 +1,205 @@
+﻿<Page x:Class="ShortBody.Pages.FamiliesPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+          xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+          xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+          xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+ 
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="FamiliesPage">
+
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Margin="20,5,20,5" Height="40"
+                    Background="{DynamicResource MaterialDesignPaper}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        Margin="5,0,5,0"
+                        >
+                <TextBlock Text="SearchBy :" VerticalAlignment="Center"
+                           FontSize="17"/>
+                <ComboBox Width="80" VerticalAlignment="Center" Name="cboSearchBox"
+                          Text="{Binding SearchBy}" Margin="5,0,5,0" SelectionChanged="cboSearchBox_SelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="All"/>
+                        <ComboBoxItem Content="Name"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <TextBox  Width="150" Margin="10,0,5,0" Name="txtSearchBox"
+                         KeyUp="txtSearchBox_KeyUp" Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+
+                <Button  Style="{StaticResource BoderlessButton}"
+                         FontSize="17" Margin="5,0,5,0"
+                         Command="{Binding SearchFamilyCommand}">
+                    Search
+                </Button>
+            </StackPanel>
+        </Grid>
+
+        <ctr:miniWindow  Background="Transparent" HeaderText="All Families"
+                        Grid.Row="1" Grid.RowSpan="3" CanClose="False">
+
+            <ctr:miniWindow.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+                        <Button  Margin="5" ToolTip="Add New Family" 
+                    Style="{StaticResource b_Button}" Click="btnAddFamily_Click">
+                            Add Family
+                        </Button>
+                        <Rectangle Fill="White" Width="1" Margin="5,5,5,5"/>
+
+                        <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}" Command="{Binding DeleteFamilyCommand}">
+                            Delete Family
+                        </Button>
+                        <Button Click="btnEditFamily_Click" Margin="5,5,5,5" Style="{StaticResource b_Button}">
+                            Edit Family
+                        </Button>
+
+                    </StackPanel>
+
+                    <DataGrid  ItemsSource="{Binding AllFamilies,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Foreground="Black"
+                            ColumnWidth="*"    Grid.Row="1" SelectionChanged="MainFamilyGrid_SelectionChanged"
+          CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserAddRows="False"
+          CanUserResizeRows="False" CanUserSortColumns="True" FontSize="13" AutoGenerateColumns="False">
+                        <DataGrid.Columns>
+                            <md:MaterialDataGridTextColumn Header="Family Name" Binding="{Binding FamilyName}"/>
+                            <md:MaterialDataGridTextColumn Header="Family Phone" Binding="{Binding FamilyPhone}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </ctr:miniWindow.Content>
+        </ctr:miniWindow>
+
+        <ctr:miniWindow Grid.Row="1" Grid.Column="1" HeaderText="Add Family" 
+                        x:Name="AddFamilyWindow" Width="600"
+                        Loaded="AddFamilyWindow_Loaded">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="241*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+
+                    <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}"
+                             
+                             ToolTip="Clear Boxes" Command="{Binding ClearBoxes}">
+                        <fa:ImageAwesome Icon="PaintBrush" Width="20" Margin="3,0,0,0"/>
+
+                    </Button>
+
+                </StackPanel>
+                <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
+                    <Grid  Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding NewFamily}">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="87*"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Style="{StaticResource tb}" Text="{Binding Error,UpdateSourceTrigger=PropertyChanged}" Margin="5"
+                                   TextAlignment="Center" Foreground="#CA5100" Grid.ColumnSpan="4"
+                                  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"/>
+                        <StackPanel Grid.Row="1" Grid.ColumnSpan="2">
+                            <!--DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}"-->
+                            <Image  Grid.Row="1" Height="100" Width="100" 
+                            Source="{Binding Picture,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay,Converter={cv:ByteToImageConverter}}"/>
+                            <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }" Content="Choose Family Picture"  Height="30" Margin="10" 
+                                Command="{Binding BrowsePicCommand}" Width="150"/>
+                        </StackPanel>
+
+                        <StackPanel Margin="5" Grid.Row="2">
+                            <TextBlock Style="{StaticResource tb}" Text="Family Name :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="Family Phone :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                            <TextBlock Style="{StaticResource tb}" Text="Clan :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" />
+                      
+                        </StackPanel>
+                        <StackPanel Grid.Column="1" Margin="5" Grid.Row="2">
+                            <TextBox Text="{Binding FamilyName}" Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding FamilyPhone}"  Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding Clan}"  Margin="5,10,5,10"/>
+                       </StackPanel>
+                        <StackPanel Grid.Column="2" Margin="5" Grid.Row="2">
+
+                            <TextBlock Style="{StaticResource tb}" Text="Address :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center"/>
+                            <TextBlock Style="{StaticResource tb}" Text="FamilyHead Name :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center"/>
+                            <TextBlock Style="{StaticResource tb}" Text="FamilyHead Contact :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center"/>
+                      
+                        </StackPanel>
+                        <StackPanel Grid.Column="3" Margin="5" Grid.Row="2">
+                            <TextBox Text="{Binding Address}" Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding FamilyHeadName}" Margin="5,10,5,10"/>
+                            <TextBox Text="{Binding FamilyHeadContact}" Margin="5,10,5,10"/>
+                           
+                            <Button Content="Save" Margin="10" Width="70"
+                                DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                               Command="{Binding SaveNewFamilyCommand}" Loaded="Button_Loaded"/>
+                            <Button Content="Save Changes" Margin="10" Width="70" Click="btnEdit_Click"
+                                DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                               Command="{Binding EditFamilyCommand}" Visibility="Collapsed" Loaded="Button_Loaded" />
+                        </StackPanel>
+
+                    </Grid>
+
+                </ScrollViewer>
+            </Grid>
+        </ctr:miniWindow>
+
+        <ctr:miniWindow Grid.Row="1" Grid.Column="1"  
+                        x:Name="FamilyWindow" Width="600" Height="630"
+                        Loaded="FamilyWindow_Loaded" Visibility="Collapsed">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="241*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+                    <Button  Margin="5" ToolTip="Add New Family" 
+                    Style="{StaticResource b_Button}" Click="btnFamilyDetails_Click">
+                        Details 
+                    </Button>
+                
+                
+
+                </StackPanel>
+                    <Frame Grid.Row="1" Grid.RowSpan="2" Loaded="Frame_Loaded" >
+
+                    </Frame>
+            </Grid>
+        </ctr:miniWindow>
+    </Grid>
+</Page>

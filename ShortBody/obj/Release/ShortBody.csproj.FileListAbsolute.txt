@@ -1,0 +1,235 @@
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\ShortBody.exe.config
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\ShortBody.exe
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\ShortBody.pdb
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\FontAwesome.WPF.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\MaterialDesignColors.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\MaterialDesignThemes.Wpf.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.xml
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+F:\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\DashBoard.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\MainWindow.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ClientPage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\CompanyPage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ExpensePage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\IncomePage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\InvoicePage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\LoginPage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\QuotationPage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\SupplierPage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\UsersPage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\ExpenseReport.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\IncomeReport.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\InvoiceReport.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\PaymentAdvice.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationReport.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationsReport.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\reportViewer.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\App.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody_Content.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\App.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\DashBoard.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\MainWindow.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ClientPage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\CompanyPage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ExpensePage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\IncomePage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\InvoicePage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\LoginPage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\QuotationPage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\SupplierPage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\UsersPage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\ExpenseReport.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\IncomeReport.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\InvoiceReport.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\PaymentAdvice.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationReport.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationsReport.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\reportViewer.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.g.resources
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.csproj.GenerateResource.Cache
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.exe
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.pdb
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.csprojResolveAssemblyReference.cache
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\PaymentAdvicePage.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\PaymentAdvicePage.baml
+F:\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\ShortBody.exe.config
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\ShortBody.exe
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\ShortBody.pdb
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\FontAwesome.WPF.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\MaterialDesignColors.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\MaterialDesignThemes.Wpf.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.xml
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+D:\Development\Projects\Web\ShortBody\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\DashBoard.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\MainWindow.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ClientPage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\CompanyPage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ExpensePage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\IncomePage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\InvoicePage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\LoginPage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\PaymentAdvicePage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\QuotationPage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\SupplierPage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\UsersPage.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\ExpenseReport.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\IncomeReport.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\InvoiceReport.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\PaymentAdvice.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationReport.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationsReport.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\reportViewer.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\App.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody_Content.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\App.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\DashBoard.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\MainWindow.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ClientPage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\CompanyPage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\ExpensePage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\IncomePage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\InvoicePage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\LoginPage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\PaymentAdvicePage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\QuotationPage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\SupplierPage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Pages\UsersPage.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\ExpenseReport.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\IncomeReport.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\InvoiceReport.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\PaymentAdvice.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationReport.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Reports\QuotationsReport.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\reportViewer.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.g.resources
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.csproj.GenerateResource.Cache
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.exe
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.pdb
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\ShortBody.csprojResolveAssemblyReference.cache
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Windows\PrintPreviewWindow.g.cs
+D:\Development\Projects\Web\ShortBody\ShortBody\obj\Release\Windows\PrintPreviewWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\DashBoard.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MainWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\LoginPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\UsersPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\App.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody_Content.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.exe
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.pdb
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\ShortBody.exe.config
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\ShortBody.exe
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\ShortBody.pdb
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\App.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\DashBoard.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MainWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\LoginPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\UsersPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.g.resources
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.csproj.GenerateResource.Cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\DashBoard.xaml.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\PropertyChanged.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\PropertyChanged.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.csprojAssemblyReference.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\DetailsMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\FamilyMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\SevicesMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ChurchPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\EventsPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\FamiliesPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\GroupsPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\PeoplePage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ReportPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\AnalysisReport.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\PrintOut.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\ZoneReport.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\SettingsWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\DetailsMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\FamilyMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\SevicesMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ChurchPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\EventsPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\FamiliesPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\GroupsPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\PeoplePage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ReportPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\AnalysisReport.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\PrintOut.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\ZoneReport.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\SettingsWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.csproj.CoreCompileInputs.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.csproj.CopyComplete

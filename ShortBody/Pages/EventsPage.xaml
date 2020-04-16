@@ -1,0 +1,212 @@
+﻿<Page x:Class="ShortBody.Pages.EventsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+       xmlns:an="clr-namespace:ShortBody.Resources.Helper_Methods"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+          xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+          xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+          xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+      mc:Ignorable="d" ShowsNavigationUI="False"
+      d:DesignHeight="900" d:DesignWidth="1500"
+      >
+    <Page.Resources>
+        <!--<Style TargetType="DatePicker">
+            <Setter Property="Height" Value="34"/>
+        </Style>-->
+    </Page.Resources>
+    <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+        <Grid >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="7"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Grid.ColumnSpan="2" Margin="20,5,20,5" Height="40"
+                    Background="{DynamicResource MaterialDesignPaper}">
+                <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        Margin="5,0,5,0"
+                        >
+                    <TextBlock Text="SearchBy :" VerticalAlignment="Center"
+                           FontSize="17"/>
+                    <ComboBox  MinWidth="80" VerticalAlignment="Center" Name="cboSearchBox"
+                          Text="{Binding SearchBy}" Margin="5,0,5,0" SelectionChanged="cboSearchBox_SelectionChanged">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="All"/>
+                            <ComboBoxItem Content="Day"/>
+                            <ComboBoxItem Content="Month"/>
+                            <ComboBoxItem Content="Year"/>
+                        </ComboBox.Items>
+                    </ComboBox>
+
+                    <ComboBox Visibility="Collapsed" Name="cboSearchMonth" MinWidth="80" Text="{Binding SearchString}">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="January"/>
+                            <ComboBoxItem Content="February"/>
+                            <ComboBoxItem Content="March"/>
+                            <ComboBoxItem Content="April"/>
+                            <ComboBoxItem Content="May"/>
+                            <ComboBoxItem Content="June"/>
+                            <ComboBoxItem Content="July"/>
+                            <ComboBoxItem Content="August"/>
+                            <ComboBoxItem Content="September"/>
+                            <ComboBoxItem Content="October"/>
+                            <ComboBoxItem Content="November"/>
+                            <ComboBoxItem Content="December"/>
+                        </ComboBox.Items>
+
+                    </ComboBox>
+                    <ComboBox Visibility="Collapsed" Name="cboSearchDay" MinWidth="80" Text="{Binding SearchString}">
+                        <ComboBox.Items>
+                            <ComboBoxItem Content="Sunday"/>
+                            <ComboBoxItem Content="Tuesday"/>
+                            <ComboBoxItem Content="Friday"/>
+                        </ComboBox.Items>
+
+                    </ComboBox>
+                    <ComboBox Visibility="Collapsed" Name="cboSearchYear" ItemsSource="{Binding Years}" MinWidth="80" Text="{Binding SearchString}">
+
+                    </ComboBox>
+
+
+                    <Button  Style="{StaticResource BoderlessButton}"
+                         FontSize="17" Margin="5,0,5,0"
+                         Command="{Binding SearchEventCommand}">
+                        Search
+                    </Button>
+                </StackPanel>
+            </Grid>
+
+            <ctr:miniWindow  Background="Transparent" HeaderText="All Events"
+                        Grid.Row="1" Grid.RowSpan="3" CanClose="False"
+                         MaxWidth="260" HorizontalAlignment="Left">
+
+                <ctr:miniWindow.Content>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="auto"/>
+                            <RowDefinition Height="241*"/>
+                        </Grid.RowDefinitions>
+                        <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+                            <Button  Margin="5" ToolTip="Add New Event" 
+                    Style="{StaticResource b_Button}" Click="btnAddEvent_Click">
+                                Add Day
+                            </Button>
+                            <Rectangle Fill="White" Width="1" Margin="5,5,5,5"/>
+
+                            <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}" Command="{Binding DeleteEventCommand}">
+                                Delete Day
+                            </Button>
+                            <Button Click="btnEditEvent_Click" Margin="5,5,5,5" Style="{StaticResource b_Button}" Command="{Binding EditClickCommand}">
+                                Edit Day
+                            </Button>
+
+                        </StackPanel>
+
+                        <DataGrid  ItemsSource="{Binding AllEvents,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Foreground="Black"
+                            ColumnWidth="*"    Grid.Row="1" SelectionChanged="MainEventGrid_SelectionChanged"
+          CanUserReorderColumns="True" CanUserResizeColumns="True" CanUserAddRows="False"
+          CanUserResizeRows="False" CanUserSortColumns="True" FontSize="13" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+
+                                <md:MaterialDataGridTextColumn Header=" Date" Binding="{Binding Date,Converter={cv:LongDateFormatter}}"/>
+
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </Grid>
+                </ctr:miniWindow.Content>
+            </ctr:miniWindow>
+
+            <ctr:miniWindow Grid.Row="1" Grid.Column="1" HeaderText="Add Day" 
+                        x:Name="AddEventWindow" Width="600"
+                        Loaded="AddEventWindow_Loaded">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+
+                        <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}"
+                             
+                             ToolTip="Clear Boxes" Command="{Binding ClearBoxes}">
+                            <fa:ImageAwesome Icon="PaintBrush" Width="20" Margin="3,0,0,0"/>
+
+                        </Button>
+
+                    </StackPanel>
+                    <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
+                        <Grid  Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding NewEvent}">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Style="{StaticResource tb}" Text="{Binding Error,UpdateSourceTrigger=PropertyChanged}" Margin="5"
+                                   TextAlignment="Center" Foreground="#CA5100" Grid.ColumnSpan="4"
+                                  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"/>
+
+
+                            <StackPanel  Margin="5" Grid.Row="2">
+                                <DatePicker DisplayDate="{Binding Date}" HorizontalContentAlignment="Center" Width="250" FontSize="20" 
+                                        SelectedDate="{Binding Date,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                                          Margin="5,10,5,10" SelectedDateFormat="Long"/>
+
+                            </StackPanel>
+                            <StackPanel  Grid.Row="3">
+                                <Button Content="Add" Margin="10" Width="70"
+                                DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                               Command="{Binding SaveNewEventCommand}" Loaded="Button_Loaded"/>
+                                <Button Content="Save Changes" Margin="10" Width="70" Click="btnEdit_Click"
+                                DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                               Command="{Binding EditEventCommand}" Visibility="Collapsed" Loaded="Button_Loaded" />
+
+                            </StackPanel>
+
+                        </Grid>
+
+                    </ScrollViewer>
+                </Grid>
+            </ctr:miniWindow>
+
+            <ctr:miniWindow Grid.Row="1" Grid.Column="1"  
+                        x:Name="EventWindow" Width="1100" MaxHeight="630"
+                         Visibility="Collapsed">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <StackPanel Orientation="Horizontal" 
+                        Background="{StaticResource myDirtyWhite}">
+                        <Button  Margin="5" ToolTip="View Event's Details" 
+                    Style="{StaticResource b_Button}" Click="btnDetails_Click">
+                            Details
+                        </Button>
+                    </StackPanel>
+                    <ScrollViewer Grid.Row="1" Grid.RowSpan="2" VerticalScrollBarVisibility="Auto">
+                        <Frame Loaded="Frame_Loaded" >
+
+                        </Frame>
+                    </ScrollViewer>
+                </Grid>
+            </ctr:miniWindow>
+        </Grid>
+    </ScrollViewer>
+</Page>

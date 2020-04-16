@@ -1,0 +1,703 @@
+﻿<Page x:Class="ShortBody.Pages.GroupsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+      mc:Ignorable="d" ShowsNavigationUI="False"
+        xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+      xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+      xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+         xmlns:fa="http://schemas.fontawesome.io/icons/"
+      d:DesignWidth="800"
+      Title="GroupsPage" Unloaded="Page_Unloaded">
+
+    <Page.Resources>
+
+
+        <Style TargetType="TextBlock" BasedOn="{StaticResource tb}">
+
+        </Style>
+
+    </Page.Resources>
+    <ScrollViewer ScrollViewer.VerticalScrollBarVisibility="Auto">
+        <Grid>
+           
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--#region Zone-->
+            <Border Grid.ColumnSpan="2" Background="{StaticResource myDirtyWhite}"
+                    Margin="20">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" BlurRadius="3"/>
+                </Border.Effect>
+                <Grid>
+                    
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+                    
+                    <TextBlock Background="{StaticResource myMoreDirtyWhite}" Style="{StaticResource head}" Grid.Row="0" Text="Zones" 
+                                Padding="10">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="2" Direction="270"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <DataGrid Name="ZoneGrid" Padding="30" Margin="5" Grid.Row="1" AutoGenerateColumns="False" 
+                              ItemsSource="{Binding Zones}" MaxHeight="500"
+                  CanUserAddRows="False" SelectionChanged="Grid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <md:MaterialDataGridTextColumn Header="Zone" Binding="{Binding ZoneName}"/>
+                            <DataGridTemplateColumn Width="60">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button Margin="5" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" Command="{Binding DeleteAssociationCommand}" CommandParameter="Zone">
+                                                <fa:ImageAwesome Icon="Trash" ToolTip="Delete Zone"
+                                                     Width="10" Height="10"/>
+                                            </Button>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel  Grid.Row="2" Margin="5">
+                        <TextBlock Text="Add Zone" Margin="5" Style="{StaticResource head}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Zone Name :" Width="150" TextAlignment="Right"/>
+                            <TextBox Width="150" Margin="5" Text="{Binding NewZoneName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                        </StackPanel>
+                       
+
+                        <Button Width="100" Content="Add" Margin="5" Command="{Binding AddAssociationCommand}" CommandParameter="Zone"/>
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+                        <StackPanel DataContext="{Binding ZoneLeader}" Orientation="Horizontal" Margin="20 10 10 10">
+                            <Border Margin="0,0,10,0">
+                                <Ellipse Width="60" Height="60">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <StackPanel>
+                                <Border  SnapsToDevicePixels="True" Margin="5" Background="{StaticResource LeaderHeadBack}">
+                                    <TextBlock Foreground="White" FontSize="12" Padding="10,7,10,0" Text="Zone Leader"/>
+                                </Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center" Text="{Binding FirstName,FallbackValue='No Leader'}" Margin="3"/>
+                                    <TextBlock TextAlignment="Center" Text="{Binding LastName}" Margin="3"/>
+                               
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <DataGrid Name="dgZoneMembers" CanUserAddRows="False"  Margin="10" ItemsSource="{Binding ZoneMembers}"
+                  ColumnWidth="*" AutoGenerateColumns="False" MaxHeight="600" SelectionChanged="Grids_SelectionChanged">
+                            <DataGrid.Columns>
+                                <md:MaterialDataGridTextColumn Width="50" Header="Id" Binding="{Binding PersonId}"/>
+
+                                <DataGridTemplateColumn Header="Picture" Width="auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="60" Height="60">
+                                                <Ellipse.Fill>
+                                                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                                </Ellipse.Fill>
+
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <md:MaterialDataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                                <md:MaterialDataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                                <DataGridTemplateColumn Header="" Width="60" >
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button Visibility="{Binding SelectedLeaderId,Converter={cv:ContentToVisibilityConverter}}" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" 
+                                                        Command="{Binding SetAsLeaderCommand}" CommandParameter="{Binding ElementName=dgZoneMembers}">
+                                                    <fa:ImageAwesome Icon="LifeRing" ToolTip="Set As Leader"
+                                                     Width="10" Height="10"/>
+                                                    
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+
+                    </StackPanel>
+
+                </Grid>
+                
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Area-->
+
+            <Border Grid.Row="1" Grid.ColumnSpan="2" Background="{StaticResource myDirtyWhite}"
+                    Margin="20">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" BlurRadius="3"/>
+                </Border.Effect>
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Background="{StaticResource myMoreDirtyWhite}" Style="{StaticResource head}" Grid.Row="0" Text="Areas" 
+                                Padding="10">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="2" Direction="270"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+                  
+                    <DataGrid Name="AreaGrid" Padding="30" Margin="4" Grid.Row="1" AutoGenerateColumns="False"
+                              ItemsSource="{Binding Areas}"  MaxHeight="500"
+                  CanUserAddRows="False" SelectionChanged="Grid_SelectionChanged">
+                        <DataGrid.Columns>
+                            <md:MaterialDataGridTextColumn Header="Area" Binding="{Binding AreaName}"/>
+                            <md:MaterialDataGridTextColumn Header="Zone" Binding="{Binding Zone.ZoneName}"/>
+                            <DataGridTemplateColumn Width="60">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+
+                                            <Button Margin="5" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" Command="{Binding DeleteAssociationCommand}" CommandParameter="Area">
+                                                <fa:ImageAwesome Icon="Trash" ToolTip="Delete Area"
+                                                     Width="10" Height="10"/>
+                                            </Button>
+                                        </StackPanel>
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                    <StackPanel  Grid.Row="2" Margin="5">
+                        <TextBlock Text="Add Area" Margin="5" Style="{StaticResource head}"/>
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Area Name :" Width="150" TextAlignment="Right"/>
+                            <TextBox Width="150" Margin="5" Text="{Binding NewAreaName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                        </StackPanel>
+                     
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Text="Zone :" TextAlignment="Right" Width="150"/>
+                            <ComboBox SelectedItem="{Binding AreaZone}" Width="150" Margin="5" ItemsSource="{Binding Zones}">
+                                <ComboBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <TextBlock Text="{Binding ZoneName}"/>
+                                    </DataTemplate>
+                                </ComboBox.ItemTemplate>
+                            </ComboBox>
+                        </StackPanel>
+
+
+                        <Button Width="100" Content="Add" Margin="5" Command="{Binding AddAssociationCommand}" CommandParameter="Area"/>
+                    </StackPanel>
+
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+                        <StackPanel DataContext="{Binding AreaLeader}" Orientation="Horizontal" Margin="20 10 10 10">
+                            <Border Margin="0,0,10,0">
+                                <Ellipse Width="60" Height="60">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <StackPanel>
+                                <Border  SnapsToDevicePixels="True" Margin="5" Background="{StaticResource LeaderHeadBack}">
+                                    <TextBlock Foreground="White" FontSize="12" Padding="10,7,10,0" Text="Area Leader"/>
+                                    
+                                </Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center" Text="{Binding FirstName,FallbackValue='No Leader'}" Margin="3"/>
+                                    <TextBlock TextAlignment="Center" Text="{Binding LastName}" Margin="3"/>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <DataGrid Name="dgAreaMembers" CanUserAddRows="False" MaxHeight="550" Grid.Column="1" Grid.RowSpan="2" Margin="10" ItemsSource="{Binding AreaMembers}"
+                  ColumnWidth="*" AutoGenerateColumns="False" SelectionChanged="Grids_SelectionChanged">
+                            <DataGrid.Columns>
+                                <md:MaterialDataGridTextColumn Width="50" Header="Id" Binding="{Binding PersonId}"/>
+
+                                <DataGridTemplateColumn Header="Picture" Width="auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="60" Height="60">
+                                                <Ellipse.Fill>
+                                                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                                </Ellipse.Fill>
+
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <md:MaterialDataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                                <md:MaterialDataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                                <DataGridTemplateColumn Header="" Width="60">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" 
+                                                        Command="{Binding SetAsLeaderCommand}" CommandParameter="{Binding ElementName=dgAreaMembers}">
+                                                    <fa:ImageAwesome Icon="LifeRing" ToolTip="Set As Leader"
+                                                     Width="10" Height="10"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+                
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Group-->
+            <Border Grid.Row="2" Grid.ColumnSpan="2" Background="{StaticResource myDirtyWhite}"
+                    Margin="20">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="2" BlurRadius="3"/>
+                </Border.Effect>
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Background="{StaticResource myMoreDirtyWhite}" Style="{StaticResource head}" Grid.Row="0" Text="Groups" 
+                                Padding="10">
+                        <TextBlock.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="2" Direction="270"/>
+                        </TextBlock.Effect>
+                    </TextBlock>
+
+                    <DataGrid Name="GroupGrid" Padding="30" Margin="5" Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Groups}"
+                      CanUserAddRows="False" SelectionChanged="Grid_SelectionChanged"  MaxHeight="500">
+                <DataGrid.Columns>
+                    <md:MaterialDataGridTextColumn Header="Group" Binding="{Binding Name}"/>
+                    <md:MaterialDataGridTextColumn Header="Area" Binding="{Binding Area.AreaName}"/>
+                    <DataGridTemplateColumn Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+
+                                            <Button Margin="5" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" Command="{Binding DeleteAssociationCommand}" CommandParameter="Group">
+                                        <fa:ImageAwesome Icon="Trash" ToolTip="Delete Group"
+                                                         Width="10" Height="10"/>
+                                    </Button>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel  Grid.Row="2" Margin="5">
+                <TextBlock Text="Add Group" Margin="5" Style="{StaticResource head}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="GroupName :" Width="150" TextAlignment="Right"/>
+                    <TextBox Width="150" Margin="5" Text="{Binding NewGroupName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                </StackPanel>
+               
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Area :" TextAlignment="Right" Width="150"/>
+                    <ComboBox SelectedItem="{Binding GroupArea}" Width="150" Margin="5" ItemsSource="{Binding Areas}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding AreaName}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                        <Button Width="100" Content="Add" Margin="5" Command="{Binding AddAssociationCommand}" CommandParameter="Group"/>
+            </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+                        <StackPanel DataContext="{Binding GroupLeader}" Orientation="Horizontal" Margin="20 10 10 10">
+                            <Border Margin="0,0,10,0">
+                                <Ellipse Width="60" Height="60">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <StackPanel>
+                                <Border  SnapsToDevicePixels="True" Margin="5" Background="{StaticResource LeaderHeadBack}">
+                                    <TextBlock Foreground="White" FontSize="12" Padding="10,7,10,0" Text="Group Leader"/>
+                                    
+                                </Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center" Text="{Binding FirstName,FallbackValue='No Leader'}" Margin="3"/>
+                                    <TextBlock TextAlignment="Center" Text="{Binding LastName}" Margin="3"/>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <DataGrid Name="dgGroupMembers" CanUserAddRows="False" MaxHeight="600" Grid.Row="7" Grid.Column="1" Grid.RowSpan="2" Margin="10" ItemsSource="{Binding GroupMembers}"
+                      ColumnWidth="*" AutoGenerateColumns="False">
+                            <DataGrid.Columns>
+                                <md:MaterialDataGridTextColumn Width="50" Header="Id" Binding="{Binding PersonId}"/>
+
+                                <DataGridTemplateColumn Header="Picture" Width="auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="60" Height="60">
+                                                <Ellipse.Fill>
+                                                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                                </Ellipse.Fill>
+
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <md:MaterialDataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                                <md:MaterialDataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                                <DataGridTemplateColumn Header="" Width="60">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" 
+                                                        Command="{Binding SetAsLeaderCommand}" CommandParameter="{Binding ElementName=dgGroupMembers}">
+                                                    <fa:ImageAwesome Icon="LifeRing" ToolTip="Set As Leader"
+                                                     Width="10" Height="10"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Class-->
+
+                    <Border Grid.Row="3" Grid.ColumnSpan="2" Background="{StaticResource myDirtyWhite}"
+                    Margin="20">
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="2" BlurRadius="3"/>
+                        </Border.Effect>
+                        <Grid>
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                                <RowDefinition Height="auto"/>
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Background="{StaticResource myMoreDirtyWhite}" 
+                                       Style="{StaticResource head}" 
+                                       Grid.Row="0" Text="Classes" 
+                                Padding="10">
+                                <TextBlock.Effect>
+                                    <DropShadowEffect ShadowDepth="2" BlurRadius="2" Direction="270"/>
+                                </TextBlock.Effect>
+                            </TextBlock>
+
+                            <DataGrid Name="ClassGrid" Padding="30" Margin="5" Grid.Row="1" AutoGenerateColumns="False" ItemsSource="{Binding Classes}"
+                  CanUserAddRows="False" SelectionChanged="Grid_SelectionChanged" MaxHeight="500">
+                <DataGrid.Columns>
+                    <md:MaterialDataGridTextColumn Header="Class" Binding="{Binding Name}"/>
+                    <md:MaterialDataGridTextColumn Header="Area" Binding="{Binding Area.AreaName}"/>
+                            <DataGridTemplateColumn Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+
+                                            <Button Margin="5" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" Command="{Binding DeleteAssociationCommand}" CommandParameter="Class">
+                                        <fa:ImageAwesome Icon="Trash" ToolTip="Delete Class"
+                                                     Width="10" Height="10"/>
+                                    </Button>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel  Grid.Row="2" Margin="5">
+                <TextBlock Text="Add Class" Margin="5" Style="{StaticResource head}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Class Name :" Width="150" TextAlignment="Right"/>
+                    <TextBox Width="150" Margin="5" Text="{Binding NewClassName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Area :" TextAlignment="Right" Width="150"/>
+                    <ComboBox SelectedItem="{Binding ClassArea}" Width="150" Margin="5" ItemsSource="{Binding Areas}">
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding AreaName}"/>
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+                </StackPanel>
+                        <Button Width="100" Content="Add" Margin="5" Command="{Binding AddAssociationCommand}" CommandParameter="Class"/>
+            </StackPanel>
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+                        <StackPanel DataContext="{Binding ClassLeader}" Orientation="Horizontal" Margin="20 10 10 10">
+                            <Border Margin="0,0,10,0">
+                                <Ellipse Width="60" Height="60">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <StackPanel>
+                                <Border  SnapsToDevicePixels="True" Margin="5" Background="{StaticResource LeaderHeadBack}">
+                                    <TextBlock Foreground="White" FontSize="12" Padding="10,7,10,0" Text="Class Leader"/>
+                                   
+                                </Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center" Text="{Binding FirstName,FallbackValue='No Leader'}" Margin="3"/>
+                                    <TextBlock TextAlignment="Center" Text="{Binding LastName}" Margin="3"/>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <DataGrid Name="dgClassMembers" CanUserAddRows="False" MaxHeight="600" Grid.Row="10" Grid.Column="1" Grid.RowSpan="2" Margin="10" ItemsSource="{Binding ClassMembers}"
+                  ColumnWidth="*" AutoGenerateColumns="False" SelectionChanged="Grids_SelectionChanged">
+                            <DataGrid.Columns>
+                                <md:MaterialDataGridTextColumn Width="50" Header="Id" Binding="{Binding PersonId}"/>
+
+                                <DataGridTemplateColumn Header="Picture" Width="auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="60" Height="60">
+                                                <Ellipse.Fill>
+                                                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                                </Ellipse.Fill>
+
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <md:MaterialDataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                                <md:MaterialDataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                                <DataGridTemplateColumn Header="" Width="60">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" 
+                                                        Command="{Binding SetAsLeaderCommand}" CommandParameter="{Binding ElementName=dgClassMembers}">
+                                                    <fa:ImageAwesome Icon="LifeRing" ToolTip="Set As Leader"
+                                                     Width="10" Height="10"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+            <!--#endregion-->
+
+            <!--#region Ministry-->
+                            <Border Grid.Row="4" Grid.ColumnSpan="2" Background="{StaticResource myDirtyWhite}"
+                    Margin="20">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="2" BlurRadius="3"/>
+                                </Border.Effect>
+                                <Grid>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="auto"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                        <RowDefinition Height="auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Background="{StaticResource myMoreDirtyWhite}" Style="{StaticResource head}" Grid.Row="0" Text="Ministry" 
+                                Padding="10">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect ShadowDepth="2" BlurRadius="2" Direction="270"/>
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+
+                                    <DataGrid Name="MinistryGrid" Padding="30" Margin="5" Grid.Row="1" AutoGenerateColumns="False"
+                                              ItemsSource="{Binding Ministries}" MaxHeight="500"
+                      CanUserAddRows="False" SelectionChanged="Grid_SelectionChanged">
+                <DataGrid.Columns>
+                    <md:MaterialDataGridTextColumn Header="Ministry" Binding="{Binding MinistryName}"/>
+                            <DataGridTemplateColumn Width="60">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel Orientation="Horizontal">
+
+                                            <Button Margin="5" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" Command="{Binding DeleteAssociationCommand}" CommandParameter="Ministry">
+                                        <fa:ImageAwesome Icon="Trash" ToolTip="Delete Ministry"
+                                                         Width="10" Height="10"/>
+                                    </Button>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel  Grid.Row="2" Margin="5">
+                <TextBlock Text="Add Ministry" Margin="5" Style="{StaticResource head}"/>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Ministry Name :" Width="150" TextAlignment="Right"/>
+                    <TextBox Width="150" Margin="5" Text="{Binding NewMinistryName,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+                </StackPanel>
+           
+
+                        <Button Width="100" Content="Add" Margin="5" Command="{Binding AddAssociationCommand}" CommandParameter="Ministry"/>
+            </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Grid.RowSpan="2">
+                        <StackPanel DataContext="{Binding MinistryLeader}" Orientation="Horizontal" Margin="20 10 10 10">
+                            <Border Margin="0,0,10,0">
+                                <Ellipse Width="60" Height="60">
+                                    <Ellipse.Fill>
+                                        <ImageBrush ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                    </Ellipse.Fill>
+                                </Ellipse>
+                            </Border>
+
+                            <StackPanel>
+                                <Border  SnapsToDevicePixels="True" Margin="5" Background="{StaticResource LeaderHeadBack}">
+                                    <TextBlock Foreground="White" FontSize="12" Padding="10,7,10,0" Text="Ministry Leader"/>
+                                  
+                                </Border>
+                                <StackPanel Orientation="Horizontal">
+                                    <TextBlock TextAlignment="Center" Text="{Binding FirstName,FallbackValue='No Leader'}" Margin="3"/>
+                                    <TextBlock TextAlignment="Center" Text="{Binding LastName}" Margin="3"/>
+
+                                </StackPanel>
+                            </StackPanel>
+                        </StackPanel>
+
+                        <DataGrid Name="dgMinistryMembers" CanUserAddRows="False" MaxHeight="600" Grid.Row="13" Grid.Column="1" Grid.RowSpan="2" Margin="10" ItemsSource="{Binding MinistryMembers}"
+                      ColumnWidth="*" AutoGenerateColumns="False" SelectionChanged="Grids_SelectionChanged">
+                            <DataGrid.Columns>
+                                <md:MaterialDataGridTextColumn Width="50" Header="Id" Binding="{Binding PersonId}"/>
+
+                                <DataGridTemplateColumn Header="Picture" Width="auto">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Ellipse Width="60" Height="60">
+                                                <Ellipse.Fill>
+                                                    <ImageBrush Stretch="UniformToFill" ImageSource="{Binding Picture,Converter={cv:ByteToImageConverter}}"/>
+                                                </Ellipse.Fill>
+
+                                            </Ellipse>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                <md:MaterialDataGridTextColumn Header="FirstName" Binding="{Binding FirstName}"/>
+                                <md:MaterialDataGridTextColumn Header="LastName" Binding="{Binding LastName}"/>
+                                <DataGridTemplateColumn Header="" Width="60">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <StackPanel Orientation="Horizontal">
+                                                <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor},Path=DataContext}" 
+                                                        Command="{Binding SetAsLeaderCommand}" CommandParameter="{Binding ElementName=dgMinistryMembers}">
+                                                    <fa:ImageAwesome Icon="LifeRing" ToolTip="Set As Leader"
+                                                     Width="10" Height="10"/>
+                                                </Button>
+                                            </StackPanel>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </StackPanel>
+                </Grid>
+
+            </Border>
+
+            <!--#endregion-->
+
+        </Grid>
+
+
+    </ScrollViewer>
+</Page>
+<!-- DescriptionBlockCommented
+         <StackPanel Orientation="Horizontal">
+    <TextBlock Text="Ministry Description :" TextAlignment="Right" Width="150"/>
+    <TextBox Width="150" Margin="5" Text="{Binding NewMinistryDescription,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+    </StackPanel>
+ -->

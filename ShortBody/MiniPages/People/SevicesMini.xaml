@@ -1,0 +1,124 @@
+﻿<UserControl x:Class="ShortBody.MiniPages.ServicesMini"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShortBody.MiniPages"
+                       xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+
+             mc:Ignorable="d" 
+               xmlns:fa="http://schemas.fontawesome.io/icons/"
+                   xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="TextBlock" BasedOn="{StaticResource tb}">
+
+        </Style>
+    </UserControl.Resources>
+    <ScrollViewer>
+        <Grid Height="630">
+            
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--#region Service and Area-->
+            <StackPanel  DataContext="{Binding SelectedPerson,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" Margin="25,0">
+                <TextBlock Text="Current Service :" MinWidth="120" TextAlignment="Right"/>
+                <ComboBox IsEnabled="False" HorizontalContentAlignment="Center" 
+                          Name="cboService" MinWidth="150"   Margin="5,10,5,10"
+                          Text="{Binding Service}" SelectionChanged="cboService_SelectionChanged">
+                    <ComboBox.Items>
+                        <ComboBoxItem>Adults</ComboBoxItem>
+                        <ComboBoxItem>Children</ComboBoxItem>
+                    </ComboBox.Items>
+                   
+                </ComboBox>
+                <Button Name="btnSaveService" Content="Change" Margin="10" Click="btnSave_Click"/>
+
+            </StackPanel>
+
+            <StackPanel Name="stpClass" DataContext="{Binding SelectedPerson,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                         Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center"
+                          Visibility="{Binding Class,Converter={cv:ContentToVisibilityConverter}}">
+                <TextBlock Text="Current Class :" MinWidth="120" TextAlignment="Right"/>
+                <ComboBox IsEnabled="False" HorizontalContentAlignment="Center" Loaded="ComboBox_Loaded" Name="cboClass" MinWidth="150" 
+                          SelectedItem="{Binding Class}"  Margin="5,10,5,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Name="btnSaveClass" Content="Change" Margin="10" Click="btnSave_Click"/>
+
+            </StackPanel>
+
+
+            <StackPanel  DataContext="{Binding SelectedPerson,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" 
+                         Grid.Row="3" Orientation="Horizontal" Visibility="{Binding Group,Converter={cv:ContentToVisibilityConverter}}" 
+                         HorizontalAlignment="Center" Margin="31,0" Name="stpGroup">
+                <TextBlock Text="Current Group :" MinWidth="120" TextAlignment="Right"/>
+                <ComboBox IsEnabled="False" HorizontalContentAlignment="Center" Loaded="ComboBox_Loaded" Name="cboGroup" MinWidth="150" 
+                          SelectedItem="{Binding Group}"  Margin="5,10,5,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Name}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Name="btnSaveGroup" Content="Change" Margin="10" Click="btnSave_Click"/>
+
+            </StackPanel>
+
+            <!--#endregion-->
+
+
+            <!--#region Ministry-->
+
+            <TextBlock Text="Current Ministries" Style="{StaticResource head}" Grid.Row="4" Margin="0,18"/>
+
+            <DataGrid  Name="dgPMinistries" SelectionChanged="dgPMinistries_SelectionChanged" AutoGenerateColumns="False" 
+                       CanUserAddRows="False" Grid.Row="5" Grid.ColumnSpan="2" 
+                      ItemsSource="{Binding PersonMinistries,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"
+                      ColumnWidth="*" HorizontalAlignment="Center">
+                <DataGrid.Columns>
+                    <md:MaterialDataGridTextColumn Header="Ministry Name" Binding="{Binding MinistryName}"/>
+                    <md:MaterialDataGridTextColumn Header="Ministry Description" Binding="{Binding MinistryDescription}"/>
+                    <DataGridTemplateColumn Header="Actions">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type UserControl},Mode=FindAncestor},Path=DataContext}" Command="{Binding RemoveFromMinistryCommand}" CommandParameter="{Binding PMinistrySelectedId}"
+                                         >
+                                    <fa:ImageAwesome Icon="Trash" ToolTip="Remove From Ninistry" Width="10" Height="10"/>
+                                </Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+            <StackPanel Grid.Row="6" Grid.ColumnSpan="2" Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBlock Text="Add To Ministry :"/>
+                <ComboBox Loaded="ComboBox_Loaded" Name="cboMinistry" MinWidth="150" SelectedItem="{Binding NewMinistry,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  Margin="5,10,5,10">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding MinistryName}"/>
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+                <Button Name="btnAddMinistry"  Command="{Binding AddToMinistryCommand}" Content="Add" Margin="10"/>
+
+            </StackPanel>
+
+            <!--#endregion-->
+        </Grid>
+    </ScrollViewer>
+
+</UserControl>

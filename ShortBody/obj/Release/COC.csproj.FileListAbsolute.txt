@@ -1,0 +1,399 @@
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\DashBoard.xaml.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\ShortBody.exe.config
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\ShortBody.exe
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\ShortBody.pdb
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\PropertyChanged.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\bin\Release\PropertyChanged.xml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\COC.csprojAssemblyReference.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\DashBoard.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MainWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\DetailsMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\FamilyMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\SevicesMini.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ChurchPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\EventsPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\FamiliesPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\GroupsPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\LoginPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\PeoplePage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ReportPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\UsersPage.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\AnalysisReport.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\PrintOut.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\ZoneReport.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\SettingsWindow.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\App.baml
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\DashBoard.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MainWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\DetailsMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\FamilyMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\SevicesMini.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ChurchPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\EventsPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\FamiliesPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\GroupsPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\LoginPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\PeoplePage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\ReportPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Pages\UsersPage.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\AnalysisReport.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\PrintOut.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Reports\ZoneReport.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\Windows\SettingsWindow.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\App.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody_Content.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.g.resources
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\COC.csproj.GenerateResource.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\COC.csproj.CoreCompileInputs.cache
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\COC.csproj.CopyComplete
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.exe
+C:\Users\Justice\OneDrive\Projects\ShortBody - Copy\ShortBody\obj\Release\ShortBody.pdb
+D:\ShortBody - Copy\ShortBody\bin\Release\DashBoard.xaml.cs
+D:\ShortBody - Copy\ShortBody\bin\Release\ShortBody.exe.config
+D:\ShortBody - Copy\ShortBody\bin\Release\ShortBody.exe
+D:\ShortBody - Copy\ShortBody\bin\Release\ShortBody.pdb
+D:\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.dll
+D:\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+D:\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\ShortBody - Copy\ShortBody\bin\Release\PropertyChanged.dll
+D:\ShortBody - Copy\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+D:\ShortBody - Copy\ShortBody\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.xml
+D:\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+D:\ShortBody - Copy\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\ShortBody - Copy\ShortBody\bin\Release\PropertyChanged.xml
+D:\ShortBody - Copy\ShortBody\obj\Release\COC.csprojAssemblyReference.cache
+D:\ShortBody - Copy\ShortBody\obj\Release\DashBoard.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\MainWindow.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\DetailsMini.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\FamilyMini.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\SevicesMini.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\ChurchPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\EventsPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\FamiliesPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\GroupsPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\LoginPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\PeoplePage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\ReportPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\UsersPage.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Reports\AnalysisReport.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Reports\PrintOut.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Reports\ZoneReport.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\Windows\SettingsWindow.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\App.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody_Content.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+D:\ShortBody - Copy\ShortBody\obj\Release\App.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\DashBoard.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\MainWindow.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\DetailsMini.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\FamilyMini.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\MiniPages\People\SevicesMini.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\ChurchPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\EventsPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\FamiliesPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\GroupsPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\LoginPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\PeoplePage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\ReportPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Pages\UsersPage.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Reports\AnalysisReport.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Reports\PrintOut.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Reports\ZoneReport.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\Windows\SettingsWindow.baml
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody.g.resources
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+D:\ShortBody - Copy\ShortBody\obj\Release\COC.csproj.GenerateResource.cache
+D:\ShortBody - Copy\ShortBody\obj\Release\COC.csproj.CoreCompileInputs.cache
+D:\ShortBody - Copy\ShortBody\obj\Release\COC.csproj.CopyComplete
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody.exe
+D:\ShortBody - Copy\ShortBody\obj\Release\ShortBody.pdb
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\DashBoard.xaml.cs
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.exe.config
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.exe
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.pdb
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.dll
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\PropertyChanged.dll
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.xml
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\ShortBody - Copy 32 bit\ShortBody\bin\Release\PropertyChanged.xml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csprojAssemblyReference.cache
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\DashBoard.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MainWindow.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\DetailsMini.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\FamilyMini.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\SevicesMini.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ChurchPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\EventsPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\FamiliesPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\GroupsPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\LoginPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\PeoplePage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ReportPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\UsersPage.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\AnalysisReport.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\PrintOut.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\ZoneReport.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\SettingsWindow.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\App.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_Content.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\App.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\DashBoard.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MainWindow.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\DetailsMini.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\FamilyMini.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\SevicesMini.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ChurchPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\EventsPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\FamiliesPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\GroupsPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\LoginPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\PeoplePage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ReportPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\UsersPage.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\AnalysisReport.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\PrintOut.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\ZoneReport.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\SettingsWindow.baml
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.g.resources
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.GenerateResource.cache
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.CoreCompileInputs.cache
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.CopyComplete
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.exe
+D:\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.pdb
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\DashBoard.xaml.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.exe.config
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.exe
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.pdb
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.dll
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\PropertyChanged.dll
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.xml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\PropertyChanged.xml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csprojAssemblyReference.cache
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\DashBoard.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MainWindow.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\DetailsMini.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\FamilyMini.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\SevicesMini.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ChurchPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\EventsPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\FamiliesPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\GroupsPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\LoginPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\PeoplePage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ReportPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\UsersPage.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\AnalysisReport.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\PrintOut.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\ZoneReport.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\SettingsWindow.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\App.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_Content.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\App.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\DashBoard.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MainWindow.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\DetailsMini.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\FamilyMini.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\SevicesMini.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ChurchPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\EventsPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\FamiliesPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\GroupsPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\LoginPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\PeoplePage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ReportPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\UsersPage.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\AnalysisReport.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\PrintOut.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\ZoneReport.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\SettingsWindow.baml
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.g.resources
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.GenerateResource.cache
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.CoreCompileInputs.cache
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.CopyComplete
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.exe
+D:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.pdb
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\DashBoard.xaml.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.exe.config
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.exe
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\ShortBody.pdb
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.dll
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServer.dll
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServerCompact.dll
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\PropertyChanged.dll
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\System.Data.SqlServerCe.dll
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.xml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServer.xml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\EntityFramework.SqlServerCompact.xml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\bin\Release\PropertyChanged.xml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csprojAssemblyReference.cache
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\DashBoard.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MainWindow.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\DetailsMini.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\FamilyMini.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\SevicesMini.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ChurchPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\EventsPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\FamiliesPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\GroupsPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\LoginPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\PeoplePage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ReportPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\UsersPage.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\AnalysisReport.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\PrintOut.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\ZoneReport.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\DocumentControl.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\LinedButton.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\miniWindow.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\MasterPasswordWindow.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\SettingsWindow.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\App.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_Content.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\GeneratedInternalTypeHelper.g.cs
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_MarkupCompile.cache
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody_MarkupCompile.lref
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\App.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\DashBoard.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MainWindow.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Event\EventDetailsMini.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\Family\FamilyDetailsMini.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\DetailsMini.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\FamilyMini.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\MiniPages\People\SevicesMini.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ChurchPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\EventsPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\FamiliesPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\GroupsPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\LoginPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\PeoplePage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\ReportPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Pages\UsersPage.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\AnalysisReport.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\PrintOut.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Reports\ZoneReport.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\DocumentControl.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\LinedButton.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\NotificationIcon.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Others.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\UserControls\miniWindow.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Buttons.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\Colors.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Resources\xamlResources\TextStyles.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\MasterPasswordWindow.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\Windows\SettingsWindow.baml
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.g.resources
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.Properties.Resources.resources
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.GenerateResource.cache
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.CoreCompileInputs.cache
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\COC.csproj.CopyComplete
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.exe
+F:\Development\Projects\ShortBody - Copy 32 bit\ShortBody\obj\Release\ShortBody.pdb

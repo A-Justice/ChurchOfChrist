@@ -1,0 +1,166 @@
+﻿<Page x:Class="ShortBody.Pages.UsersPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ShortBody.Pages"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      xmlns:ctr="clr-namespace:ShortBody.Resources.UserControls"
+              xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes"
+       xmlns:an="clr-namespace:ShortBody.Resources.Helper_Methods"
+      xmlns:cv="clr-namespace:ShortBody.ValueConverters"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      >
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.ColumnSpan="2" Margin="20,5,20,5" Height="40"
+                    Background="{DynamicResource MaterialDesignPaper}">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Center"
+                        Margin="5,0,5,0"
+                        >
+                <TextBlock Text="SearchBy :" VerticalAlignment="Center"
+                           FontSize="17"/>
+                <ComboBox Width="150" VerticalAlignment="Center" Name="cboSearchBox"
+                          SelectionChanged="cboSearchBox_SelectionChanged"
+                          Text="{Binding SearchBy}" Margin="5,0,5,0">
+                    <ComboBox.Items>
+                        <ComboBoxItem Content="All"/>
+                        <ComboBoxItem Content="FirstName"/>
+                        <ComboBoxItem Content="LastName"/>
+                    </ComboBox.Items>
+                </ComboBox>
+
+                <TextBox Name="txtSearchBox"  Width="150" Margin="10,0,5,0" KeyUp="txtSearchBox_KeyUp" Text="{Binding SearchString,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"/>
+
+                <Button  Style="{StaticResource BoderlessButton}"
+                         FontSize="17" Margin="5,0,5,0"
+                         Command="{Binding SearchUserCommand}">
+                    Search
+                </Button>
+            </StackPanel>
+        </Grid>
+
+
+        <ctr:miniWindow  Background="Transparent" HeaderText="All Users"
+                        Grid.Row="1" Grid.RowSpan="3" CanClose="False">
+
+            <ctr:miniWindow.Content>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="241*"/>
+                        <RowDefinition Height="10"/>
+                    </Grid.RowDefinitions>
+                    <DockPanel
+                        Background="{StaticResource myDirtyWhite}">
+                        <Button  Margin="5" ToolTip="Add New User" 
+                    Style="{StaticResource b_Button}" Click="btnAddUser_Click">
+                            <fa:ImageAwesome Icon="UserPlus" Width="20"/>
+                        </Button>
+                        <Rectangle Fill="White" Width="1" Margin="5,5,1,5"/>
+
+                        <Button  Margin="1,5,5,5" Style="{StaticResource b_Button}" Command="{Binding DeleteUserCommand}">
+                            <StackPanel Orientation="Horizontal" ToolTip="Delete User">
+                                <fa:ImageAwesome Icon="Trash" Width="20"/>
+
+                            </StackPanel>
+                        </Button>
+
+                        <Button  Margin="5" ToolTip="Change Selected User's Image" HorizontalAlignment="Right" 
+                                 Command="{Binding ChangeUserImageCommand}"
+                    Style="{StaticResource b_Button}" Click="ChangeUserImage_Click">
+                            <fa:ImageAwesome Icon="Image" Width="20"/>
+                        </Button>
+                    </DockPanel>
+
+                    <DataGrid  ItemsSource="{Binding AllUsers,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}" Foreground="Black"
+                           ColumnWidth="*"    Grid.RowSpan="2" CanUserAddRows="False" Grid.Row="1" SelectionChanged="MainUserGrid_SelectionChanged" an:DataGridExtension.HideAnnotatedColumns="True"
+          CanUserReorderColumns="True" CanUserResizeColumns="True" CellEditEnding="MainUserGrid_CellEditEnding"
+          CanUserResizeRows="False" CanUserSortColumns="True" FontSize="13">
+
+                    </DataGrid>
+                </Grid>
+            </ctr:miniWindow.Content>
+        </ctr:miniWindow>
+
+        <ctr:miniWindow Grid.Row="1" Grid.Column="1" HeaderText="Add User" 
+                        x:Name="AddUserWindow" Width="600"  
+                       Loaded="AddUserWindow_Loaded">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="241*"/>
+                    <RowDefinition Height="10"/>
+                </Grid.RowDefinitions>
+                <DockPanel 
+                        Background="{StaticResource myDirtyWhite}">
+
+                    <Button  Margin="5,5,5,5" Style="{StaticResource b_Button}"
+                             ToolTip="Clear Boxes" Command="{Binding ClearBoxes}">
+                        <fa:ImageAwesome Icon="PaintBrush" Width="20" Margin="3,0,0,0"/>
+
+                    </Button>
+                    <TextBlock Style="{StaticResource tb}" Text="{Binding Error,UpdateSourceTrigger=PropertyChanged}" Margin="5"
+                               Grid.Column="2" VerticalAlignment="Center"
+                                   TextAlignment="Center" Foreground="#CA5100" Grid.ColumnSpan="2"
+                                   DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"/>
+
+
+                </DockPanel>
+
+                <Grid Grid.Row="1" Grid.RowSpan="2" Background="{DynamicResource MaterialDesignPaper}" DataContext="{Binding NewUser}">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="87*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Image Height="100" Grid.Column="1" Margin="10" 
+                           Source="{Binding UserImage,UpdateSourceTrigger=PropertyChanged,Mode=TwoWay}"  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"/>
+                    <StackPanel  VerticalAlignment="Center"  DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext}"
+                                 >
+                        <TextBlock Style="{StaticResource tb}" Text="Image :" HorizontalAlignment="Right"/>
+                        <Button Content="Browse" Style="{StaticResource b_Button}" Command="{Binding BrowseCommand}"
+                                Margin="10" Width="70" HorizontalAlignment="Right"/>
+                    </StackPanel>
+                    
+                    <StackPanel Margin="5" Grid.Row="1">
+                        <TextBlock Style="{StaticResource tb}" Text="FirstName :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                        <TextBlock Style="{StaticResource tb}" Text="LastName :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+
+                    </StackPanel>
+                    <StackPanel Grid.Column="1" Margin="5" Grid.Row="1">
+                        <TextBox Text="{Binding FirstName}"  Margin="5,10,5,10"/>
+                        <TextBox Text="{Binding LastName}"  Margin="5,10,5,10"/>
+                    </StackPanel>
+                    <StackPanel Grid.Column="2" Margin="5" Grid.Row="1">
+                        <TextBlock Style="{StaticResource tb}" Text="Password :" TextAlignment="Right" Margin="10" 
+                                   VerticalAlignment="Center" Height="30"/>
+                             </StackPanel>
+                    <StackPanel Grid.Column="3" Margin="5" Grid.Row="1">
+                        <TextBox Text="{Binding Password}"  Margin="5,10,5,10"/>
+                        <Button Content="Save" DataContext="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page},Mode=FindAncestor} ,Path=DataContext }"
+                                Command="{Binding SaveNewUserCommand}" Width="50"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </ctr:miniWindow>
+    </Grid>
+</Page>
